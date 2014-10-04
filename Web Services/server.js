@@ -44,26 +44,26 @@ app.post('/send', function(req, res){
 	console.log('Send Post');
 	var collec = ['tweetClassifier'];
 	var db = require("mongojs").connect(databaseUrl, collec);
-	var collection = db.collection(collec);
+	//var collection = db.collection(collec);
 
 	console.log(req.body.tweet1);
-	var tweet = req.body.tweet1;
+	var text = req.body.tweet1;
 
 	// Submit to the DB
-    collection.insert({
-        "tweet" : tweet,
-        "calification" : 0
-    }, function (err, doc) {
-        if (err) {
-            // If it failed, return error
-            console.log(err);
-            res.redirect("/*");
-        }
-        else {
-            res.redirect("/");
-            
-        }
-    });
+    db.tweetClassifier.save(
+    	{
+    		tweet: text,
+    		classifier: 0
+    	}, function(err, saved) {
+		  if( err || !saved ){
+		  	console.log("User not saved");
+		  	res.redirect("/*");
+		  } else {
+		  	console.log("User saved");
+		  	res.redirect("/");
+		  }
+	});
+
 });
 
 /*
