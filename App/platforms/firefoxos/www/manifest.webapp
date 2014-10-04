@@ -1,0 +1,25 @@
+{
+    "launch_path": "/index.html",
+    "installs_allowed_from": [
+        "*"
+    ],
+    "version": "1.0.0",
+    "name": "Tweet Classifier Mobile",
+    "description": "Project for PMI Usach that classifier tweet",
+    "developer": {
+        "name": "Usach Team",
+        "url": "http://www.citiaps.cl"
+    },
+    "fullscreen": "true",
+    "orientation": [
+        "default"
+    ],
+    "icons": {
+        "57": "/icon/icon-57.png",
+        "60": "/icon/icon-60.png",
+        "72": "/icon/icon-72.png",
+        "114": "/icon/icon-114.png",
+        "128": "/icon/icon-128.png",
+        "144": "/icon/icon-144.png"
+    }
+}
