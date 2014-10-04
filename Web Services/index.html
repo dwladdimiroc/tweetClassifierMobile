@@ -17,7 +17,12 @@
 </head>
 
 <body>
+  <div class="alert alert-success" HIDDEN=TRUE>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Gracias</strong> Has enviado tu tweet!
+    </div>
   <h1> Web services de Tweet Classifier Mobile </h1>
+  
 
   <form action="/send" method="post">
   	<input name="tweet1" type="text" class="form-control" placeholder="Tweet #1 a enviar">
@@ -30,7 +35,13 @@
   	<input name="tweet8" type="text" class="form-control" placeholder="Tweet #8 a enviar">
   	<input name="tweet9" type="text" class="form-control" placeholder="Tweet #9 a enviar">
   	<input name="tweet10" type="text" class="form-control" placeholder="Tweet #10 a enviar"> -->
-  	<button name="send" type="submit" class="btn btn-primary">Enviar tweet</button>
+  	<button name="send" id = "botonEnviar"type="submit" class="btn btn-primary" data-dismiss="alert">Enviar tweet</button >
+    <script>
+     $('#botonEnviar').click(function () {
+        $(".alert").show();
+      });
+    </script>
+    
   </form>
 
 </body>
