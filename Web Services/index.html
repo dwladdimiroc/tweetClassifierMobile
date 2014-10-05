@@ -17,20 +17,7 @@
 </head>
 
 <body>
-  <div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <!-- dialog body -->
-        <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          Has enviado tu tweet!
-        </div>
-        <!-- dialog buttons -->
-      </div>
-    </div>
-  </div>
   <h1> Web services de Tweet Classifier Mobile </h1>
-  
 
   <form action="/send" method="post">
   	<input name="tweet1" type="text" class="form-control" placeholder="Tweet #1 a enviar">
@@ -43,24 +30,7 @@
   	<input name="tweet8" type="text" class="form-control" placeholder="Tweet #8 a enviar">
   	<input name="tweet9" type="text" class="form-control" placeholder="Tweet #9 a enviar">
   	<input name="tweet10" type="text" class="form-control" placeholder="Tweet #10 a enviar"> -->
-  	<button name="send" id = "botonEnviar" type="submit" class="btn btn-primary" data-dismiss="alert">Enviar tweet</button >
-    <script>
-     $('#botonEnviar').click(function () {        
-      // remove the event listeners when the dialog is hidden
-      $("#myModal").bind("hide", function() {
-        // remove event listeners on the buttons
-        $("#myModal a.btn").unbind();
-        });
- 
-      // finally, wire up the actual modal functionality and show the dialog
-      $("#myModal").modal({
-        "backdrop" : "static",
-        "keyboard" : true,
-        "show" : true // this parameter ensures the modal is shown immediately
-        });
-      });
-    </script>
-    
+  	<button name="send" type="submit" class="btn btn-primary">Enviar tweet</button>
   </form>
 
 </body>
