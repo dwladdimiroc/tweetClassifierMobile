@@ -1,5 +1,6 @@
 ﻿var express = require('express')
   , app = module.exports = express()
+  , cors = require('cors')
   , http = require('http')
   , server = http.createServer(app)
   , io = require('socket.io').listen(server)
@@ -18,6 +19,7 @@ app.use("/", express.static(__dirname + '/'));
 //Use for Post
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 console.log('Web Services Online in Port 8080')
 
@@ -26,13 +28,26 @@ console.log('Web Services Online in Port 8080')
 */
 
 //Devuelve los los ultimos n tweets
-app.get('/retrieve/tweets/:table/:number', function(req, res){
+app.get('/tweets/:table/:number', function(req, res){
 	console.log(req.params.table);
 	if(req.params.number > 1000) req.params.number=1000;
 	var collec = [req.params.table];
 	var db = require("mongojs").connect(databaseUrl, collec);
 	var collection = db.collection(req.params.table);
 	collection.find({} ,{limit:req.params.number, sort: [['date',-1]]}).toArray(function(e, results){
+	    if (e) return next(e)
+	    res.send(results)
+		db.close();
+  	})
+});
+
+//Devuelve los los ultimos n tweets
+app.get('/tweetClassifier', function(req, res){
+	console.log('tweetClassifier');
+	var collec = ['tweetClassifier'];
+	var db = require("mongojs").connect(databaseUrl, collec);
+	var collection = db.collection('tweetClassifier');
+	collection.find({}).toArray(function(e, results){
 	    if (e) return next(e)
 	    res.send(results)
 		db.close();
@@ -56,15 +71,48 @@ app.post('/send', function(req, res){
     		classifier: 0
     	}, function(err, saved) {
 		  if( err || !saved ){
-		  	console.log("User not saved");
+		  	console.log("Tweet don't save");
 		  	res.redirect("/*");
 		  } else {
-		  	console.log("User saved");
+		  	console.log("Tweet save");
 		  	res.redirect("/");
 		  }
 	});
-
 });
+
+//Realiza el post del dato
+app.post('/classifier', function(req, res){
+	console.log('Send Post Classifier');
+	console.log(req.body.tweet + ' | ' + req.body.classification);
+	
+	var collec = ['tweetClassifier'];
+	var db = require("mongojs").connect(databaseUrl, collec);
+	
+	var text = req.body.tweet;
+	var number = parseInt(req.body.classification);
+
+	// Submit to the DB
+    db.tweetClassifier.update(
+    	{tweet: text},
+    	{$set: {classifier: number}
+    	}, function(err, updated) {
+		  if( err || !updated ){
+		  	console.log("Tweet don't classifier");
+		  	res.send(err);
+		  } else {
+		  	console.log("Tweet classifier");
+		  	res.send('OK');
+		  }
+	});
+});
+
+
+/*db.users.update({email: "srirangan@gmail.com"}, {$set: {password: "iReallyLoveMongo"}}, function(err, updated) {
+  if( err || !updated ) console.log("User not updated");
+  else console.log("User updated");
+});*/
+
+
 
 /*
 * Errores 404

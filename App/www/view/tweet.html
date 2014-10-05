@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <!-- <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" /> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
+        <script type="text/javascript" src="../js/tweet.js"></script>
+
+        <style type="text/css">
+        span{
+            color: #FFFFFF;
+            margin-right: 15px;
+        }
+        </style>
+
+        <title>Tweet Classifier Mobile</title>
+    </head>
+    <body>
+    	<div class="panel panel-primary">
+		  <div class="panel-heading">
+            <a href="../index.html"><span class="glyphicon glyphicon-chevron-left" ></span></a> Tweet <label id="tweetNumber">#</label>
+		  </div>
+		  <div class="panel-body">
+    		  	<p>Tweet <label id="tweetText">text</label></p>
+    		  	<p>Tipo de clasificación</p>
+    		  	<select id="tweetClassification" type="submit" class="form-control">
+    			  <option value="1">1</option>
+    			  <option value="2">2</option>
+    			  <option value="3">3</option>
+    			  <option value="4">4</option>
+    			  <option value="5">5</option>
+    			  <option value="6">6</option>
+    			</select>
+                <br><button id="btn-classification" type="submit" class="btn btn-primary">Clasificar <li class="glyphicon glyphicon-ok"></li></button>
+		  </div>
+		</div>
+		
+		<script>
+		    window.localStorage.setItem("idTweet", "0");
+		    var idTweet = window.localStorage.getItem("idTweet");
+		    checkTweet(idTweet);
+		</script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>
