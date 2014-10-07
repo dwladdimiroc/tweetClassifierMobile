@@ -42,11 +42,11 @@ app.get('/tweets/:table/:number', function(req, res){
 });
 
 //Devuelve los los ultimos n tweets
-app.get('/tweetClassifier', function(req, res){
-	console.log('tweetClassifier');
-	var collec = ['tweetClassifier'];
+app.get('/tweetAnalyzed', function(req, res){
+	console.log('tweetAnalyzed');
+	var collec = ['tweetAnalyzed'];
 	var db = require("mongojs").connect(databaseUrl, collec);
-	var collection = db.collection('tweetClassifier');
+	var collection = db.collection('tweetAnalyzed');
 	collection.find({}).toArray(function(e, results){
 	    if (e) return next(e)
 	    res.send(results)

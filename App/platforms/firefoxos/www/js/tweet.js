@@ -1,14 +1,15 @@
 function checkTweet(id){  
 
     $.ajax({ url: 'http://192.168.2.4:8080/tweetClassifier/', type: 'GET',
-    success: function(resultData) {
+    success: function(resultData) { 
     	//console.log('Lectura de los datos');
 		document.getElementById("tweetText").innerHTML = resultData[id].tweet;
 		//var idTweet = parseInt(id) + 1;
 		document.getElementById("tweetNumber").innerHTML = parseInt(id) + 1;  
+    },
+    error: function(xhr, status, error){
+    	console('Error' + error);
     }
-    }}
-
   });
 }
 
