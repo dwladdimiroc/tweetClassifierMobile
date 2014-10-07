@@ -1,0 +1,28 @@
+
+/*Author : www.binarytheme.com 2014 
+Please Share us if you like our work, it will help us alot*/
+
+body {
+  padding-top: 100px;
+  
+}
+
+
+.logo h1 {
+  color: #000000;
+  font-size: 80px;
+  padding-bottom:40px;
+}
+
+.text-muted {
+    color:#000000;
+    font-size:25px;
+}
+
+/*media queries*/
+
+@media (max-width: 767px){
+  .logo h1 {
+    font-size: 65px;
+  }
+}
