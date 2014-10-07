@@ -15,33 +15,20 @@ app.use("/js", express.static(__dirname + '/js'));
 app.use("/css/", express.static(__dirname + '/css/'));
 app.use("/fonts/", express.static(__dirname + '/fonts/'));
 app.use("/img/", express.static(__dirname + '/img/'));
+app.use("/", express.static(__dirname + '/view/'));
 app.use("/", express.static(__dirname + '/'));
 //Use for Post
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-console.log('Web Services Online in Port 8080')
+console.log('Web Services Online in Port 8080');
 
-/*
-*	Consultas con tweets
-*/
-/*app.use(function(req, res, next){
-  res.status(404);
+//Routing view
+app.get('/404', function(req, res){
+	res.redirect("/404.html");
+});
 
-  if (req.accepts('html')) {
-	res.send({ error: 'Not found' });
-    res.render('404', { url: req.url });
-    return;
-  }
-
-  if (req.accepts('json')) {
-    res.send({ error: 'Not found' });
-    return;
-  }
-
-  res.type('txt').send('Not found');
-});*/
 //Devuelve los los ultimos n tweets
 app.get('/tweets/:table/:number', function(req, res){
 	console.log(req.params.table);
@@ -57,14 +44,14 @@ app.get('/tweets/:table/:number', function(req, res){
 });
 
 //Devuelve los los ultimos n tweets
-app.get('/tweetAnalyzed', function(req, res){
-	console.log('tweetAnalyzed');
-	var collec = ['tweetAnalyzed'];
+app.get('/tweetClassifier/:number', function(req, res){
+	console.log('tweetClassifier');
+	var collec = ['tweetClassifier'];
 	var db = require("mongojs").connect(databaseUrl, collec);
-	var collection = db.collection('tweetAnalyzed');
+	var collection = db.collection('tweetClassifier');
 	collection.find({}).toArray(function(e, results){
 	    if (e) return next(e)
-	    res.send(results)
+	    res.send('{"tweet": "'+results[req.params.number].tweet+'"}');
 		db.close();
   	})
 });
@@ -83,7 +70,7 @@ app.post('/send', function(req, res){
     db.tweetClassifier.save(
     	{
     		tweet: text,
-    		classifier: 0
+    		classifier: {class1: 0, class2: 0, class3: 0, class4: 0, class5: 0, class6: 0}
     	}, function(err, saved) {
 		  if( err || !saved ){
 		  	console.log("Tweet don't save");
@@ -107,6 +94,7 @@ app.post('/classifier', function(req, res){
 	var number = parseInt(req.body.classification);
 
 	// Submit to the DB
+	//CAMBIAR LA WEA
     db.tweetClassifier.update(
     	{tweet: text},
     	{$set: {classifier: number}
@@ -121,13 +109,30 @@ app.post('/classifier', function(req, res){
 	});
 });
 
+//Realiza el post del dato
+app.post('/language', function(req, res){
+	console.log('Send Post Error Language');
+	console.log(req.body.tweet);
+	
+	var collec = ['tweetClassifier'];
+	var db = require("mongojs").connect(databaseUrl, collec);
+	
+	var text = req.body.tweet;
+	var number = parseInt(req.body.classification);
 
-/*db.users.update({email: "srirangan@gmail.com"}, {$set: {password: "iReallyLoveMongo"}}, function(err, updated) {
-  if( err || !updated ) console.log("User not updated");
-  else console.log("User updated");
-});*/
-
-
+	// Submit to the DB
+    db.tweetClassifier.remove(
+		{tweet: text},
+		function(err, number) {
+			if( err ){
+				console.log("Tweet don't remove");
+				res.send(err);
+			} else {
+				console.log("Tweet classifier");
+				res.send('OK');
+			}
+	});
+});
 
 /*
 * Errores 404
