@@ -1,7 +1,6 @@
-
 function checkTweet(id){  
 
-    $.ajax({ url: 'http://192.168.2.40:8080/tweetClassifier/', type: 'GET',
+    $.ajax({ url: 'http://192.168.2.4:8080/tweetClassifier/', type: 'GET',
     success: function(resultData) { 
     	//console.log('Lectura de los datos');
 		document.getElementById("tweetText").innerHTML = resultData[id].tweet;
@@ -95,7 +94,7 @@ $(document).ready(function(){
         jQuery.support.cors = true;
 
        $.ajax({
-	        url: "http://192.168.2.40:8080/classifier/",
+	        url: "http://192.168.2.4:8080/classifier/",
 	        type: "POST",
 	        data: { classification : document.getElementById("tweetClassification").value ,
 	        		tweet : document.getElementById("tweetText").innerHTML},
