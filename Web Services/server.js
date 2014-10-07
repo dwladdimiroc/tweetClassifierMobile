@@ -26,7 +26,22 @@ console.log('Web Services Online in Port 8080')
 /*
 *	Consultas con tweets
 */
+/*app.use(function(req, res, next){
+  res.status(404);
 
+  if (req.accepts('html')) {
+	res.send({ error: 'Not found' });
+    res.render('404', { url: req.url });
+    return;
+  }
+
+  if (req.accepts('json')) {
+    res.send({ error: 'Not found' });
+    return;
+  }
+
+  res.type('txt').send('Not found');
+});*/
 //Devuelve los los ultimos n tweets
 app.get('/tweets/:table/:number', function(req, res){
 	console.log(req.params.table);
@@ -130,5 +145,5 @@ app.use(function(err, req, res, next) {
   if(err.status !== 404) {
     return next();
   }
-  res.send(err.message || '** No elephants here **');
+  res.redirect('** No elephants here **');
 });
