@@ -1,4 +1,3 @@
-
 //Reconocimiento de los datos en la BD
 function checkTweet(id){
     var urlTweet = 'http://158.170.35.87/tweetMobile/tweetClassifier/' + id;
