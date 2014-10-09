@@ -44,7 +44,6 @@
             margin-left: 35px;
 
         }
-
         </style>
 
         <title>Tweet Classifier Mobile</title>
@@ -77,14 +76,12 @@
                 </div>
 		  </div>
         </div>
-		
-		
-		<script>
-		    window.localStorage.setItem("idTweet", "0");
-		    var idTweet = window.localStorage.getItem("idTweet");
-		    checkTweet(idTweet);
-		</script>
 
+        <script type="text/javascript">
+            var arrayRandom = [];
+            window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
+            initTweet();
+        </script>
         <script type="text/javascript" src="cordova.js"></script>
     </body>
 </html>
