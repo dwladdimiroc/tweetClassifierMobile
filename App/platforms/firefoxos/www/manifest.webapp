@@ -15,11 +15,6 @@
         "default"
     ],
     "icons": {
-        "57": "/icon/icon-57.png",
-        "60": "/icon/icon-60.png",
-        "72": "/icon/icon-72.png",
-        "114": "/icon/icon-114.png",
-        "128": "/icon/icon-128.png",
-        "144": "/icon/icon-144.png"
+        "60": "/icon/icon-60.png"
     }
 }
