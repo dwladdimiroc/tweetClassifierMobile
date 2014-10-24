@@ -124,7 +124,7 @@ app.post('/classifier', function(req, res){
 	// Submit to the DB
 	//CAMBIAR LA WEA
     db.tweetClassifier.update(
-    	{tweet: text},
+    	{Tweet: text},
     	//{$inc: {classifier: classification
     	{$inc: {"class1.subclass1": class1.subclass1,
     			"class1.subclass2": class1.subclass2,

@@ -39,6 +39,8 @@ function totalTweet(){
   });
 }
 
+
+
 //Tweet a analizar
 function initTweet() {
     totalTweet();
@@ -237,6 +239,19 @@ $(document).ready(function(){
             }
         });
     });
+
+
+    $('#btn-classification-entrega').click(function (event) {
+        $("#entrega").show();
+        $("#botoncitos").hide();
+    });
+
+
+    $('#btn-classification-solicita').click(function (event) {
+        $("#solicita").show();
+        $("#botoncitos").hide();
+    });
+
 
     $('#btn-bug').click(function (event) {
         event.preventDefault(); 
