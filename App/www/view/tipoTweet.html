@@ -74,6 +74,12 @@
         </div>
 
         <script type="text/javascript">
+            function disablebutton() {
+                document.getElementById("LoginButton").disabled = true;
+            }
+        </script>
+
+        <script type="text/javascript">
             var arrayRandom = [];
             window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
             initTweet();
