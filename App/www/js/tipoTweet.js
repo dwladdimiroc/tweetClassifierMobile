@@ -211,10 +211,10 @@ $(document).ready(function(){
         $("#checked-list-box li.active").each(function(idx, li) {
             if($(li).val() == 1){
                 classTweet.class1 = 1;
-                window.location.href = "../view/tweetSolicita.html"
+                //window.location.href = "../view/tweetSolicita.html"
             }else {
                 classTweet.class2 = 1;
-                window.location.href = "../view/tweetEntrega.html"
+                //window.location.href = "../view/tweetEntrega.html"
             }
         });
   
