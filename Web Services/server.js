@@ -95,7 +95,8 @@ app.post('/send', function(req, res){
     db.tweetClassifier.save(
     	{
     		tweet: text,
-    		classifier: {class1  : 0, class2 : 0, subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 }
+    		class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0 },
+    		class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0 }
     	}, function(err, saved) {
 		  if( err || !saved ){
 		  	console.log("Tweet don't save");
@@ -125,22 +126,27 @@ app.post('/classifier', function(req, res){
     db.tweetClassifier.update(
     	{tweet: text},
     	//{$inc: {classifier: classification
-    	{$inc: {"classifier.class1": classification.class1,
-    			"classifier.class2": classification.class2,
-    			"classifier.subclass1": classification.subclass1,
-    			"classifier.subclass2": classification.subclass2,
-    			"classifier.subclass3": classification.subclass3,
-    			"classifier.subclass4": classification.subclass4,
-    			"classifier.subclass5": classification.subclass5,
-    			"classifier.subclass6": classification.subclass6,
-    			"classifier.subclass7": classification.subclass7,
-    			"classifier.subclass8": classification.subclass8,
-    			"classifier.subclass9": classification.subclass9,
-    			"classifier.subclass10": classification.subclass10,
-    			"classifier.subclass11": classification.subclass11,
-    			"classifier.subclass12": classification.subclass12,
-    			"classifier.subclass13": classification.subclass13,
-    			"classifier.subclass14": classification.subclass14}
+    	{$inc: {"class1.subclass1": class1.subclass1,
+    			"class1.subclass2": class1.subclass2,
+    			"class1.subclass3": class1.subclass3,
+    			"class1.subclass4": class1.subclass4,
+    			"class1.subclass5": class1.subclass5,
+    			"class1.subclass6": class1.subclass6,
+    			"class1.subclass7": class1.subclass7,
+    			"class1.subclass8": class1.subclass8,
+    			"class1.subclass9": class1.subclass9,
+    			"class1.subclass10": class1.subclass10,
+    			"class2.subclass1": class2.subclass1,
+    			"class2.subclass2": class2.subclass2,
+    			"class2.subclass3": class2.subclass3,
+    			"class2.subclass4": class2.subclass4,
+    			"class2.subclass5": class2.subclass5,
+    			"class2.subclass6": class2.subclass6,
+    			"class2.subclass7": class2.subclass7,
+    			"class2.subclass8": class2.subclass8,
+    			"class2.subclass9": class2.subclass9,
+    			"class2.subclass10": class2.subclass10,
+    			"class2.subclass11": class2.subclass11}
     	}, function(err, updated) {
 		  if( err || !updated ){
 		  	console.log("Tweet don't classifier");
