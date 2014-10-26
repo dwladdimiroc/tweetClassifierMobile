@@ -68,7 +68,7 @@ app.post('/send', function(req, res){
     db.tweetClassifier.save(
     	{
     		tweet: text,
-    		classifier: 0
+    		classifier: {class1:0,class2:0,class3:0,class4:0,class5:0,class6:0}
     	}, function(err, saved) {
 		  if( err || !saved ){
 		  	console.log("Tweet don't save");
