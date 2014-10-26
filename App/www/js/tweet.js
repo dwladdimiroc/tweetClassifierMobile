@@ -52,7 +52,8 @@ function initTweet() {
     } else {
         document.getElementById("tweetText").innerHTML = 'No hay más tweet que analizar';
         document.getElementById("tweetNumber").innerHTML = '#';
-        $("#btn-classification").prop("disabled",true);
+        $("#btn-classification-entrega").prop("disabled",true);
+        $("#btn-classification-solicita").prop("disabled",true);
         $("#btn-bug").prop("disabled",true);
     }
 }

@@ -11,34 +11,59 @@ span{
     margin-right: 15px;
 }
 
-@media (max-width: 400px) {
-    .panel-body{
-        height: 100%;
-    }
-}
-
 .list-group.checked-list-box{
-    width:auto;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 11px;
+    width: 200px;
 }
 
 .list-group-item-primary {
+    font-size: 11px;
     color: rgb(255, 255, 255);
     background-color: rgb(66, 139, 202);
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.list-group-item {
+    width: 200px;
+    font-size: 10px;
     width: auto;
 }
 
 .list-group {
-    margin-top:0px; 
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 250px;
+    font-size: 11px;
+    padding: 5px 5px;
+    width: 200px;
+}
+
+.panel-heading{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.panel-body{
+    margin-top: 40px;
+    margin-bot: 40px;
+}
+
+.panel-footer{
+    width: 100%;
+    background-color: #428BCA;
+    color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
 }
 
 .row-centered {
-    text-align:center;
+    text-align:center;;
+    margin-bottom: 50px;
 }
 
 .state-icon {
