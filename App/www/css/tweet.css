@@ -1,0 +1,54 @@
+body{
+    background-color: #FFFFFF;
+}
+
+button{
+    width: 120px;
+}
+
+span{
+    color: #FFFFFF;
+    margin-right: 15px;
+}
+
+@media (max-width: 400px) {
+    .panel-body{
+        height: 100%;
+    }
+}
+
+.list-group.checked-list-box{
+    width:auto;
+}
+
+.list-group-item-primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(66, 139, 202);
+    margin-left: 0px;
+    margin-right: 0px;
+    width: auto;
+}
+
+.list-group {
+    margin-top:0px; 
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 250px;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+.state-icon {
+    left: -5px;
+}
+
+.tweet{
+    margin-bottom: 15px;
+}
+
+.well{
+    width: auto;
+}

@@ -5,10 +5,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
-	<title>Web Services</title>
+	<title>Tweet Classifier</title>
 	
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	
@@ -20,7 +20,7 @@
   <h1> Web services de Tweet Classifier Mobile </h1>
 
   <form action="/send" method="post">
-  	<input name="tweet1" type="text" class="form-control" placeholder="Tweet #1 a enviar">
+  	<input name="tweet1" type="text" class="form-control" placeholder="Tweet #1 a enviar" required>
   	<!-- <input name="tweet2" type="text" class="form-control" placeholder="Tweet #2 a enviar">
   	<input name="tweet3" type="text" class="form-control" placeholder="Tweet #3 a enviar">
   	<input name="tweet4" type="text" class="form-control" placeholder="Tweet #4 a enviar">
@@ -30,7 +30,16 @@
   	<input name="tweet8" type="text" class="form-control" placeholder="Tweet #8 a enviar">
   	<input name="tweet9" type="text" class="form-control" placeholder="Tweet #9 a enviar">
   	<input name="tweet10" type="text" class="form-control" placeholder="Tweet #10 a enviar"> -->
-  	<button name="send" type="submit" class="btn btn-primary">Enviar tweet</button>
+  	<button id="enviar" name="send" type="submit" class="btn btn-primary">Enviar tweet</button>
+
+    <div id="success-alert" class="alert alert-success fade">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+        ¡Se ha enviado tu tweet correctamente!
+    </div>
+    <div class="alert alert-danger hide fade in" role="alert">
+     <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Error!</strong> Ha ocurrido un problema
+    </div>
   </form>
 
 </body>
