@@ -271,6 +271,10 @@ $(document).ready(function(){
             }
         });
     });
+
+    //$('#btn-help').click(function(event){
+
+    //});
 });
 
 
