@@ -25,12 +25,10 @@ span{
 .list-group.checked-list-box{
     margin-right: auto;
     margin-left: auto;
-    font-size: 11px;
-    width: 200px;
+    width: 155px;
 }
 
 .list-group-item-primary {
-    font-size: 11px;
     color: rgb(255, 255, 255);
     background-color: rgb(66, 139, 202);
     margin-left: 0px;
@@ -38,15 +36,15 @@ span{
 }
 
 .list-group-item {
-    width: 200px;
-    font-size: 10px;
+    width: 155px;
+    font-size: 11px;
     width: auto;
 }
 
 .list-group {
     font-size: 11px;
-    padding: 5px 5px;
-    width: 200px;
+    /*padding: 5px 5px;*/
+    width: 155px;
 }
 
 .panel-heading{

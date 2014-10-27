@@ -119,7 +119,7 @@ app.post('/classifier', function(req, res){
 	
 	var text = req.body.tweet;
 	var classification = JSON.parse(req.body.classification);
-	//console.log(classification);
+	console.log(classification);
 
 	// Submit to the DB
     db.tweetClassifier.update(
