@@ -15,11 +15,93 @@
     </head>
     <body>
 
+        <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Ayuda</h4>
+                    </div>
+                    <div class="modal-body">
+                    A continuación se le presentarán una serie de tweets enviados durante una situación de emergencia  y usted tendrá que clasificarlos siguiendo las siguientes etiquetas:
+                    <table class="table">
+                    <TR>
+                        <TH>Tengo:  Tweet entrega información </TH>
+                        <TH>Necesito: Tweet solicita información </TH>
+                    </TR>
+                    <TR>
+                        <TD>Personas Encontradas</TD>
+                        <TD>Personas Perdidas</TD>
+                    </TR>
+                    <TR>
+                        <TD>Estado personal</TD>
+                        <TD></TD>
+                    </TR> 
+                    <TR>
+                        <TD></TD>
+                        <TD>Medios de transporte</TD>
+                    </TR> 
+                    <TR>
+                        <TD></TD>
+                        <TD>Ayuda a damnificados</TD>
+                    </TR> 
+                    <TR>
+                        <TD></TD>
+                        <TD>Voluntarios</TD>
+                    </TR> 
+                    <TR>
+                        <TD></TD>
+                        <TD>Seguridad ciudadana</TD>
+                    </TR> 
+                    <TR>
+                        <TD>Lugares</TD>
+                        <TD>Lugares</TD>
+                    </TR> 
+                    <TR>
+                        <TD>Instituciones</TD>
+                        <TD>Instituciones</TD>
+                    </TR>
+                    <TR>
+                        <TD>Cortes de agua</TD>
+                        <TD>Agua</TD>
+                    </TR>  
+                    <TR>
+                        <TD>Reposición de agua</TD>
+                        <TD></TD>
+                    </TR>
+                    <TR>
+                        <TD>Cortes de luz</TD>
+                        <TD>Luz</TD>
+                    </TR>
+                    <TR>
+                        <TD>Reposición de luz</TD>
+                        <TD></TD>
+                    </TR>
+                    <TR>
+                        <TD>Alerta natural</TD>
+                        <TD>Alerta natural</TD>
+                    </TR>
+                    <TR>
+                        <TD>Otros</TD>
+                        <TD>Otros</TD>
+                    </TR>
+                    </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     	<div class="panel panel-primary">
             
             <div class="panel-heading">
+<<<<<<< HEAD
                 <a href="#"><span id="btn-back" class="glyphicon glyphicon-chevron-left" ></span></a> Tweet <label id="tweetNumber">#</label>
                 <span id="help" class="glyphicon glyphicon-question-sign"></span>
+=======
+                <a href="../index.html"><span class="glyphicon glyphicon-chevron-left" ></span></a> Tweet <label id="tweetNumber">#</label>
+                <a href= "#"><span id="btn-help" class="glyphicon glyphicon-question-sign" data-toggle="modal" data-target=".bs-example-modal-sm"></span></a>
+>>>>>>> bf6fabf98e14be763eae42608f337a2e852387cf
             </div>
 
             <div class="panel-body">
