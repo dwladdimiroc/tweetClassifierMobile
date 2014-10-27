@@ -10,8 +10,26 @@ span{
     color: #FFFFFF;
 }
 
+.modal-header .close{
+    margin-top: -15px;
+    margin-right: -25px;
+}
+
+.modal-close{
+    font-size: 50px;
+    color: #000000;
+}
+
 .glyphicon.glyphicon-chevron-left{
     margin-right: 15px;
+}
+
+.glyphicon.glyphicon-question-sign.modal{
+    color: #000000;
+    font-size: 25px;
+    margin-top: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .glyphicon.glyphicon-question-sign{
@@ -22,10 +40,14 @@ span{
     margin-bottom: auto;
 }
 
+.glyphicon.glyphicon-question-sign-modal{
+    color: #000000;
+}
+
 .list-group.checked-list-box{
     margin-right: auto;
     margin-left: auto;
-    width: 155px;
+    width: 160px;
 }
 
 .list-group-item-primary {
@@ -36,7 +58,7 @@ span{
 }
 
 .list-group-item {
-    width: 155px;
+    width: 160px;
     font-size: 11px;
     width: auto;
 }
@@ -44,7 +66,7 @@ span{
 .list-group {
     font-size: 11px;
     /*padding: 5px 5px;*/
-    width: 155px;
+    width: 160px;
 }
 
 .panel-heading{

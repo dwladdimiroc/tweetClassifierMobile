@@ -327,6 +327,7 @@ $(document).ready(function(){
         if($("#botoncitos").is(":visible")){
             window.location = "../index.html";
         } else {
+            clearCheckList();
             $("#entrega").hide();
             $("#solicita").hide();
             $("#botoncitos").show();
@@ -347,20 +348,24 @@ $(document).ready(function(){
 
 
     $('#btn-bug').click(function (event) {
-        event.preventDefault(); 
+        bootbox.confirm("¿Está seguro de eliminar este tweet <strong>" + document.getElementById("tweetText").innerHTML + "</strong> ?", function(result) {
+            if(result){
+                event.preventDefault(); 
   
-        jQuery.support.cors = true;
+                jQuery.support.cors = true;
 
-       $.ajax({
-            url: "http://158.170.35.87/tweetMobile/language/",
-            type: "POST",
-            data: { tweet : document.getElementById("tweetText").innerHTML},
-            success: function(data) {
-                initTweet();
-            },
-            error: function(req,error) { 
-                console.log(req.responseText);
-            }
+               $.ajax({
+                    url: "http://158.170.35.87/tweetMobile/language/",
+                    type: "POST",
+                    data: { tweet : document.getElementById("tweetText").innerHTML},
+                    success: function(data) {
+                        initTweet();
+                    },
+                    error: function(req,error) { 
+                        console.log(req.responseText);
+                    }
+                });
+            }  
         });
     });
 
