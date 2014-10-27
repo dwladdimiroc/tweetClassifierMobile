@@ -26,36 +26,15 @@
         <meta name="msapplication-tap-highlight" content="no" /> -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
 
         <title>Tweet Classifier Mobile</title>
-
-        <style type="text/css">
-        h2{
-            margin: 0;     
-            color: #666;
-            padding-top: 90px;
-            font-size: 52px;
-            font-family: "trebuchet ms", sans-serif;    
-        }
-        .item{
-            background: #333;    
-            text-align: center;
-            width: max-width;
-            height: 525px !important;
-        }
-        .carousel{
-            margin-top: 20px;
-        }
-        .bs-example{
-            margin: 20px;
-        }
-        </style>
     </head>
     <body>
         <div class="bs-example">
-            <div id="myCarousel" class="carousel slide" data-interval="0" data-ride="carousel">
+            <div id="myCarousel" class="carousel slide" data-interval="0" data-ride="carousel" style="border-radius:0px;">
                 <!-- Carousel indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -74,14 +53,10 @@
                     <div class="item">
                         <h2>Clasifica</h2>
                         <div class="carousel-caption">
-                          <h3>La idea es clasificar cada Tweet según algún tipo de necesidad.</h3>
+                          <h3>La idea es clasificar cada Tweet en dos grandes categorías y luego en más subcategorías</h3>
                           <p>
-                            Clasificación 1: Tweet que sea demasiado triste</br>
-                            Clasificación 2: Tweet que sea demasiado alegre</br>
-                            Clasificación 3: Tweet que sea demasiado neutro</br>
-                            Clasificación 4: Tweet que sea demasiado rabioso</br>
-                            Clasificación 5: Tweet que sea demasiado chistoso</br>
-                            Clasificación 6: Tweet que sea demasiado fin</br>
+                            Categoría 1: Tweet que entrega información</br>
+                            Categoría 2: Tweet que solicita información</br>
                           </p>
                         </div>
                     </div>
@@ -94,7 +69,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Carousel nav -->
+
+                <br>
                 <a class="carousel-control left" href="#myCarousel" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>

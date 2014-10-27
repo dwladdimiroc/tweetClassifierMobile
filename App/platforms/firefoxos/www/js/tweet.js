@@ -1,4 +1,3 @@
-
 //Reconocimiento de los datos en la BD
 function checkTweet(id){
     var urlTweet = 'http://158.170.35.87/tweetMobile/tweetClassifier/' + id;
@@ -40,6 +39,8 @@ function totalTweet(){
   });
 }
 
+
+
 //Tweet a analizar
 function initTweet() {
     totalTweet();
@@ -51,7 +52,8 @@ function initTweet() {
     } else {
         document.getElementById("tweetText").innerHTML = 'No hay más tweet que analizar';
         document.getElementById("tweetNumber").innerHTML = '#';
-        $("#btn-classification").prop("disabled",true);
+        $("#btn-classification-entrega").prop("disabled",true);
+        $("#btn-classification-solicita").prop("disabled",true);
         $("#btn-bug").prop("disabled",true);
     }
 }
@@ -122,7 +124,15 @@ function clearCheckList(){
             }
         }
 
+        function clearDisplay() {
+            $("#entrega").hide();
+            $("#solicita").hide();
+            $("#botoncitos").show();
+        }
+
+        //Inicializamos
         init();
+        clearDisplay();
     });
 }
 
@@ -199,33 +209,39 @@ $(function () {
 
 //Envío de los datos para actualizar la página
 $(document).ready(function(){
-    $('#btn-classification').click(function (event) {
+    $('#btn-classification-entrega').click(function (event) {
     	event.preventDefault(); 
         var classTweet = {
-            class1:0,
-            class2:0,
-            class3:0,
-            class4:0,
-            class5:0,
-            class6:0
+            class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0 },
+            class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0 }
         };
 
-        //SOLUCION KUMA - PIENSE ALGO MEJOR
-        $("#checked-list-box li.active").each(function(idx, li) {
+        //Realizar esto con For Each
+        $("#checked-list-box-entrega li.active").each(function(idx, li) {
             if($(li).val() == 1){
-                classTweet.class1 = 1;
-            } else if ($(li).val() == 2){
-                classTweet.class2 = 1;
-            } else if ($(li).val() == 3){
-                classTweet.class3 = 1;
-            } else if ($(li).val() == 4){
-                classTweet.class4 = 1;
-            } else if ($(li).val() == 5){
-                classTweet.class5 = 1;
-            } else {
-                classTweet.class6 = 1;
+                classTweet.class1.subclass1 = 1;
+            }else if($(li).val() == 2){
+                classTweet.class1.subclass2 = 1;
+            }else if($(li).val() == 3){
+                classTweet.class1.subclass3 = 1;
+            }else if($(li).val() == 4){
+                classTweet.class1.subclass4 = 1;
+            }else if($(li).val() == 5){
+                classTweet.class1.subclass5 = 1;
+            }else if($(li).val() == 6){
+                classTweet.class1.subclass6 = 1;
+            }else if($(li).val() == 7){
+                classTweet.class1.subclass7 = 1;
+            }else if($(li).val() == 8){
+                classTweet.class1.subclass8 = 1;
+            }else if($(li).val() == 9){
+                classTweet.class1.subclass9 = 1;
+            }else if($(li).val() == 10){
+                classTweet.class1.subclass10 = 1;
             }
         });
+
+        //console.log(JSON.stringify(classTweet));
   
         jQuery.support.cors = true;
 
@@ -249,13 +265,94 @@ $(document).ready(function(){
         });
     });
 
+    $('#btn-classification-solicita').click(function (event) {
+        event.preventDefault(); 
+        var classTweet = {
+            class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0 },
+            class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0 }
+        };
+
+        //Realizar esto con For Each
+        $("#checked-list-box-solicita li.active").each(function(idx, li) {
+            if($(li).val() == 1){
+                classTweet.class2.subclass1 = 1;
+            }else if($(li).val() == 2){
+                classTweet.class2.subclass2 = 1;
+            }else if($(li).val() == 3){
+                classTweet.class2.subclass3 = 1;
+            }else if($(li).val() == 4){
+                classTweet.class2.subclass4 = 1;
+            }else if($(li).val() == 5){
+                classTweet.class2.subclass5 = 1;
+            }else if($(li).val() == 6){
+                classTweet.class2.subclass6 = 1;
+            }else if($(li).val() == 7){
+                classTweet.class2.subclass7 = 1;
+            }else if($(li).val() == 8){
+                classTweet.class2.subclass8 = 1;
+            }else if($(li).val() == 9){
+                classTweet.class2.subclass9 = 1;
+            }else if($(li).val() == 10){
+                classTweet.class2.subclass10 = 1;
+            }else if($(li).val() == 11){
+                classTweet.class2.subclass11 = 1;
+            }
+        });
+
+        //console.log(JSON.stringify(classTweet));
+  
+        jQuery.support.cors = true;
+
+       $.ajax({
+            url: "http://158.170.35.87/tweetMobile/classifier/",
+            type: "POST",
+            data: { classification : JSON.stringify(classTweet) ,
+                    tweet : document.getElementById("tweetText").innerHTML},
+            success: function(data) {
+                var idTweet = parseInt(document.getElementById("tweetNumber").innerHTML) - 1;
+                var arrayRandom = JSON.parse(window.localStorage.getItem("arrayRandom"));
+                arrayRandom.push(idTweet);
+                window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
+                clearCheckList();
+                initTweet();
+            },
+            error: function(req,error) { 
+                console.log(req.responseText);
+                //console.log(error);
+            }
+        });
+    });
+
+    $('#btn-back').click(function (event) {
+        if($("#botoncitos").is(":visible")){
+            window.location = "../index.html";
+        } else {
+            $("#entrega").hide();
+            $("#solicita").hide();
+            $("#botoncitos").show();
+        }
+    });
+
+
+    $('#btn-entrega').click(function (event) {
+        $("#entrega").show();
+        $("#botoncitos").hide();
+    });
+
+
+    $('#btn-solicita').click(function (event) {
+        $("#solicita").show();
+        $("#botoncitos").hide();
+    });
+
+
     $('#btn-bug').click(function (event) {
         event.preventDefault(); 
   
         jQuery.support.cors = true;
 
        $.ajax({
-            url: "http://localhost:8080/language/",
+            url: "http://158.170.35.87/tweetMobile/language/",
             type: "POST",
             data: { tweet : document.getElementById("tweetText").innerHTML},
             success: function(data) {

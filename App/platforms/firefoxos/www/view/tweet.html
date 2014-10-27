@@ -1,81 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <!-- <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" /> -->
+        <meta charset="utf-8" />        
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../css/tweet.css" />
+        
         <script type="text/javascript" src="../js/jquery.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
         <script type="text/javascript" src="../js/tweet.js"></script>
 
-        <style type="text/css">
-        span{
-            color: #FFFFFF;
-            margin-right: 15px;
-        }
-                /* CSS REQUIRED */
-        .state-icon {
-            left: -5px;
-        }
-        .list-group-item-primary {
-            color: rgb(255, 255, 255);
-            background-color: rgb(66, 139, 202);
-            margin-left: 0px;
-            margin-right: px;
-            width: 150px;
-        }
-
-        /* DEMO ONLY - REMOVES UNWANTED MARGIN */
-        .list-group {
-            margin-top:0px; 
-            margin-bottom: 0px;
-            margin-left: 0px;
-            margin-right: 0px;
-            width: 150px;
-        }
-        .well{
-            
-            width: 190px;
-        } 
-        button{
-            width: 120px;
-            margin-left: 35px;
-
-        }
-        </style>
-
         <title>Tweet Classifier Mobile</title>
     </head>
     <body>
-    	<div class="panel panel-primary">
-		  <div class="panel-heading">
-            <a href="../index.html"><span class="glyphicon glyphicon-chevron-left" ></span></a> Tweet <label id="tweetNumber">#</label>
-		  </div>
-		  <div class="panel-body">
-    		  	<p>Tweet <label id="tweetText">text</label></p>
-    		  	<p>Tipo de clasificación</p>
-    		  	
-                <div class="container" style="margin-top:20px;">
-                    <div class="well" style="max-height: 300px;overflow: auto;">
-                        <ul id="checked-list-box" class="list-group checked-list-box">
-                            <li value="1" class="list-group-item">Alegría</li>
-                            <li value="2" class="list-group-item">Miedo</li>
-                            <li value="3" class="list-group-item">Odio</li>
-                            <li value="4" class="list-group-item">Ira</li>
-                            <li value="5" class="list-group-item">Lujuria</li>
-                            <li value="6" class="list-group-item">Amor</li>
-                        </ul>
-                    </div>
 
-                <button id="btn-classification" type="submit" class="btn btn-primary">Clasificar <li class="glyphicon glyphicon-ok"></li></button>
-                <br>
-                <br>
-                <button id="btn-bug" type="submit" class="btn btn-primary">Bug <li class="glyphicon glyphicon-remove"></li></button>
+    	<div class="panel panel-primary">
+            
+            <div class="panel-heading">
+                <a href="#"><span id="btn-back" class="glyphicon glyphicon-chevron-left" ></span></a> Tweet <label id="tweetNumber">#</label>
+                <span id="help" class="glyphicon glyphicon-question-sign"></span>
+            </div>
+
+            <div class="panel-body">
+                <div class="tweet">
+    		  	   Tweet <label id="tweetText">text</label>
+    		  	   <br>Tipo de <strong>información</strong>
                 </div>
-		  </div>
-        </div>
+
+                <div id="botoncitos" class="row row-centered">
+                    <button id="btn-entrega" type="submit" class="btn btn-primary">Entrega <li class="glyphicon glyphicon-ok"></li></button> <br><br>
+                    <button id="btn-solicita" type="submit" class="btn btn-primary">Solicita <li class="glyphicon glyphicon-ok"></li></button>
+                    <br>
+                    <br>
+                    <button id="btn-bug" type="submit" class="btn btn-primary">Bug <li class="glyphicon glyphicon-remove"></li></button>
+                </div>
+            
+                <div id="entrega" style="display:none">
+                    <div class="row">
+                        <!-- <div class="col-xs-12"> -->
+                        <ul id="checked-list-box-entrega" class="list-group checked-list-box">
+                            <li value="1" class="list-group-item">Personas encontradas</li>
+                            <li value="2" class="list-group-item">Estado personal</li>
+                            <li value="3" class="list-group-item">Lugares</li>
+                            <li value="4" class="list-group-item">Instituciones</li>
+                            <li value="5" class="list-group-item">Cortes de agua</li>
+                            <li value="6" class="list-group-item">Reposición de agua</li>
+                            <li value="7" class="list-group-item">Corte de luz</li>
+                            <li value="8" class="list-group-item">Reposición de luz</li>
+                            <li value="9" class="list-group-item">Alerta natural</li>
+                            <li value="10" class="list-group-item">Otros</li>
+                        </ul>
+                        <!-- </div> -->
+                    </div>
+                    <div class="row row-centered">
+                        <button id="btn-classification-entrega" type="submit" class="btn btn-primary">Clasificar <li class="glyphicon glyphicon-ok"></li></button>
+                    </div>
+                </div>
+
+                <div id="solicita" style="display:none">
+                    <div class="row">
+                        <!-- <div class="col-xs-12"> -->
+                        <ul id="checked-list-box-solicita" class="list-group checked-list-box">
+                            <li value="1" class="list-group-item">Personas perdidas</li>
+                            <li value="2" class="list-group-item">Medios de transporte</li>
+                            <li value="3" class="list-group-item">Ayuda damnificados</li>
+                            <li value="4" class="list-group-item">Voluntarios</li>
+                            <li value="5" class="list-group-item">Seguridad ciudadana</li>
+                            <li value="6" class="list-group-item">Lugares</li>
+                            <li value="7" class="list-group-item">Instituciones</li>
+                            <li value="8" class="list-group-item">Agua</li>
+                            <li value="9" class="list-group-item">Luz</li>
+                            <li value="10" class="list-group-item">Alerta natural</li>
+                            <li value="11" class="list-group-item">Otros</li>
+                        </ul>
+                        <!-- </div> -->
+                    </div>
+                    <div class="row row-centered">
+                        <button id="btn-classification-solicita" type="submit" class="btn btn-primary">Clasificar <li class="glyphicon glyphicon-ok"></li></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="panel-footer">
+                Made in CITIAPS
+            </div>
+
+		</div>
 
         <script type="text/javascript">
             var arrayRandom = [];
