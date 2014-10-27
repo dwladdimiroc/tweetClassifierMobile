@@ -8,7 +8,18 @@ button{
 
 span{
     color: #FFFFFF;
+}
+
+.glyphicon.glyphicon-chevron-left{
     margin-right: 15px;
+}
+
+.glyphicon.glyphicon-question-sign{
+    float: right;
+    font-size: 25px;
+    margin-top: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .list-group.checked-list-box{
@@ -48,7 +59,7 @@ span{
 
 .panel-body{
     margin-top: 40px;
-    margin-bot: 40px;
+    margin-bottom: 40px;
 }
 
 .panel-footer{
@@ -62,7 +73,7 @@ span{
 }
 
 .row-centered {
-    text-align:center;;
+    text-align:center;
     margin-bottom: 50px;
 }
 
