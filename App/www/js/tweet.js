@@ -4,7 +4,7 @@ function checkTweet(id){
 
     jQuery.support.cors = true;
 
-    $.ajax({ url: urlTweet, type: 'GET', dataType: "json",
+    $.ajax({ url: urlTweet, type: 'GET', dataType: "json", 
     success: function(resultData) {
 		document.getElementById("tweetText").innerHTML = resultData.tweet;
 		document.getElementById("tweetNumber").innerHTML = parseInt(id) + 1;  
@@ -324,9 +324,7 @@ $(document).ready(function(){
     });
 
     $('#btn-back').click(function (event) {
-        if($("#botoncitos").is(":visible")){
-            window.location = "../index.html";
-        } else {
+        if(!$("#botoncitos").is(":visible")){
             clearCheckList();
             $("#entrega").hide();
             $("#solicita").hide();
@@ -337,13 +335,13 @@ $(document).ready(function(){
 
     $('#btn-entrega').click(function (event) {
         $("#entrega").show();
-        $("#botoncitos").hide();
+        $(".btns").hide();
     });
 
 
     $('#btn-solicita').click(function (event) {
         $("#solicita").show();
-        $("#botoncitos").hide();
+        $(".btns").hide();
     });
 
 
