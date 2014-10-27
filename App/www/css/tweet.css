@@ -10,6 +10,16 @@ span{
     color: #FFFFFF;
 }
 
+.modal-header .close{
+    margin-top: -15px;
+    margin-right: -25px;
+}
+
+.modal-close{
+    font-size: 50px;
+    color: #000000;
+}
+
 .glyphicon.glyphicon-chevron-left{
     margin-right: 15px;
 }
