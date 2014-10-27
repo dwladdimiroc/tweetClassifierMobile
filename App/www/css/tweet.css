@@ -32,6 +32,10 @@ span{
     margin-bottom: auto;
 }
 
+.glyphicon.glyphicon-question-sign-modal{
+    color: #000000;
+}
+
 .list-group.checked-list-box{
     margin-right: auto;
     margin-left: auto;
