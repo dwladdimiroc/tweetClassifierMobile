@@ -209,6 +209,12 @@ $(function () {
 
 //Envío de los datos para actualizar la página
 $(document).ready(function(){
+    $("#btn-clasificar").prop("disabled", true);
+    $('#btn-entrega-footer').prop("disabled", false);
+    $('#btn-solicita-footer').prop("disabled", false);
+    $('#btn-entrega-head').hide();
+    $('#btn-solicita-head').hide();
+
     $('#btn-classification-entrega').click(function (event) {
     	event.preventDefault(); 
         var classTweet = {
@@ -323,29 +329,48 @@ $(document).ready(function(){
         });
     });
 
-    $('#btn-back').click(function (event) {
-        if(!$("#botoncitos").is(":visible")){
-            clearCheckList();
-            $("#entrega").hide();
-            $("#solicita").hide();
-            $("#botoncitos").show();
-        }
-    });
-
-
-    $('#btn-entrega').click(function (event) {
+    $('#btn-entrega-body').click(function (event) {
         $("#entrega").show();
         $(".btns").hide();
+        $('#btn-entrega-footer').show();
+        $("#btn-solicita-footer").show();
+        $('#btn-entrega-footer').prop("disabled", true);
+        $('#btn-clasificar').prop("disabled", false);
+        $('#btn-entrega-head').show();
     });
 
 
-    $('#btn-solicita').click(function (event) {
+    $('#btn-solicita-body').click(function (event) {
         $("#solicita").show();
         $(".btns").hide();
+        $('#btn-entrega-footer').show();
+        $("#btn-solicita-footer").show();
+        $('#btn-solicita-footer').prop("disabled", true);
+        $('#btn-clasificar').prop("disabled", false);
+        $('#btn-solicita-head').show();
+    });
+
+    $('#btn-entrega-footer').click(function (event) {
+       $("#solicita").hide();
+        $("#entrega").show();
+        $('#btn-entrega-footer').prop("disabled", true);
+        $("#btn-solicita-footer").prop("disabled", false);
+        $('#btn-entrega-head').show();
+        $('#btn-solicita-head').hide();
     });
 
 
-    $('#btn-bug').click(function (event) {
+    $('#btn-solicita-footer').click(function (event) {
+        $("#solicita").show();
+        $("#entrega").hide();
+        $('#btn-entrega-footer').prop("disabled", false);
+        $("#btn-solicita-footer").prop("disabled", true);
+        $('#btn-solicita-head').show();
+        $('#btn-entrega-head').hide();
+    });
+
+
+    $('#btn-bug-body').click(function (event) {
         bootbox.confirm("¿Está seguro de eliminar este tweet <strong>" + document.getElementById("tweetText").innerHTML + "</strong> ?", function(result) {
             if(result){
                 event.preventDefault(); 

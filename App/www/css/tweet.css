@@ -18,20 +18,34 @@ span{
     margin-bottom: auto;
 }
 
-/*.glyphicon.glyphicon-question-sign-modal{
-    color: #000000;
-}*/
+.row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
 
 .container{
+    padding-right: 0px;
+    padding-left: 0px;
     width:100%;
     height: 100%;
 }
 
-.btns{
-    margin-right: 2%;
-    margin-left: 2%;
-    margin:0 auto;
-    max-width: 500px;   
+@media(min-width:600px){
+    .btns{
+        margin-right: 2%;
+        margin-left: 2%;
+        margin:0 auto;
+        max-width: 500px;   
+    }
+}
+
+@media(max-width:600px){
+    .btns{
+        margin-right: 2%;
+        margin-left: 2%;
+        margin:0 auto;
+        max-width: 300px;   
+    }
 }
 
 .options{
@@ -39,43 +53,165 @@ span{
     margin-left: 2%;
 }
 
-.row-head{
-    color: white;
-    background-color: #428BCA;
-    height: 2.5em;
+@media(min-width:600px){
+    .row-head{
+        padding: 5px;
+        color: white;
+        background-color: #428BCA;
+        height: 2.5em;
+    }
 }
 
-.row-body-tweet{
-    margin-right: 1%;
-    margin-left: 1%;
-    margin-top: 1%;
+@media(max-width:600px){
+    .row-head{
+        padding: 5px;
+        color: white;
+        background-color: #428BCA;
+        height: 2.5em;
 
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
 }
 
-.row-body-classifier{
+.col-head-tweet{
+    padding-right: 0px;
+    width: 30%;
+}
+
+.col-head-tipo{
     text-align: center;
-    vertical-align: bottom;
+    width: 50%;
+}
+
+.col-head-help{
+    width: 20%;
+    text-align: right;
+    right: 0px;
+}
+
+.btn-head{
+    padding: 0 0px;
+    font-size: 15px;
+    margin-top: 0px;
+    height: 26px;
 }
 
 .glyphicon.smaller{
     font-size: 25px;
 }
 
-.col-right{
-    text-align: right;
-    right: 0px;
-    margin-top: -2em
+.glyphicon-check{
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
+@media(min-width:600px){
+    .row-body-tweet{
+        margin-right: 1%;
+        margin-left: 1%;
+        margin-top: 1%;
+    }
+}
+
+@media(max-width:600px){
+    .row-body-tweet{
+        margin-right: 1%;
+        margin-left: 1%;
+        margin-top: 12%;
+    }
 }
 
 .border-tweet{
-
     padding: 10px;
     border: 1px solid;
     border-color: gray;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+}
+
+@media(min-width:600px){
+    .tweet{
+        font-size: 25px;
+        font-style: italic;
+    }
+}
+
+@media(max-width:600px){
+    .tweet{
+        font-style: italic;
+    }
+}
+
+@media(min-width:600px){
+    .btns{
+        text-align: center;
+        vertical-align: bottom;
+    }
+}
+
+@media(max-width:600px){
+    .btns{
+        margin-top: 10%;
+        margin-bottom: 50px;
+        text-align: center;
+        vertical-align: bottom;
+    }
+    .row-entrega{
+        margin-bottom: 30px;
+    }
+    .row-solicita{
+        margin-bottom: 40px;
+    }
+}
+
+.btn-body{
+    font-size: 20px;
+    padding: 15px;
+}
+
+@media(min-width:600px){
+    .row-footer{
+        text-align: center;
+        color: white;
+        height: 2em;
+        margin-top: 2%;
+    }
+
+    .btn-footer{
+        width: 250px;
+        margin-top: 8px;
+        border-color: #FFFFFF;
+        border-width: 1.5px;
+    }
+}
+
+@media(max-width:600px){
+    .row-footer{
+        text-align: center;
+        color: white;
+        background-color: #428BCA;
+
+        height: 3.5em;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .btn-footer{
+        font-size: 12px;
+        width: 7.5em;
+        margin-top: 8px;
+        border-color: #FFFFFF;
+        border-width: 1.5px;
+    }
+
 
 }
 
@@ -87,14 +223,13 @@ span{
     padding: 0px;   
 }
 
-
-.voffset05  { margin-top: 0.2em; }
+.voffset05 { margin-top: 0.2em; }
 .voffset0  { margin-top: 1em; }
-.voffset1 { margin-top: 5em; }
-.voffset2 { margin-top: 10em; }
-.voffset3 { margin-top: 12.5em; }
-.voffset4 { margin-top: 15em; }
-.voffset5 { margin-top: 17.5em; }
-.voffset6 { margin-top: 20em; }
-.voffset7 { margin-top: 22.5em; }
-.voffset8 { margin-top: 25em; }
+.voffset1  { margin-top: 5em; }
+.voffset2  { margin-top: 10em; }
+.voffset3  { margin-top: 12.5em; }
+.voffset4  { margin-top: 15em; }
+.voffset5  { margin-top: 17.5em; }
+.voffset6  { margin-top: 20em; }
+.voffset7  { margin-top: 22.5em; }
+.voffset8  { margin-top: 25em; }

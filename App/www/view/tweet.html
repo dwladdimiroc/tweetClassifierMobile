@@ -98,198 +98,100 @@
 
         <div class="container">
             <div id="head" class="row clearfix row-head">
-                <div class="col-sm-12 voffset05">
-                    Tweet #<label id="tweetNumber"></label>
-                <div class="col-right">
-                    <a href= "#">
-                    <span id="btn-help" class="glyphicon glyphicon-question-sign smaller" data-toggle="modal" data-target=".bs-example-modal-sm">
-                    </span>
-                    </a>
-                </div>
+                    <div class="col-xs-5 col-head-tweet">
+                        Tweet #<label id="tweetNumber"></label>
+                    </div>
 
-                </div>
+                    <div class="col-xs-5 col-head-tipo">
+                        <button id="btn-entrega-head" class="btn btn-success btn-head" style="display:none" disabled>Entrega <span class="glyphicon glyphicon-bullhorn"></span></button>
+
+                        <button id="btn-solicita-head" class="btn btn-warning btn-head" style="display:none" disabled>Solicita <span class="glyphicon glyphicon-earphone"></span></button>
+                    </div>
+                    <div class="col-xs-2 col-head-help">
+                        <a href= "#"><span id="btn-help" class="glyphicon glyphicon-question-sign smaller" data-toggle="modal" data-target=".bs-example-modal-sm"></span></a>
+                    </div>
             </div>
 
             <div id="body-tweet" class="row row-body-tweet">
                 <p class="bg-info border-tweet">
-                   <label id="tweetText" style="font-style: italic;">text</label>
+                   <label id="tweetText" class="tweet">text</label>
                 </p>
             </div>
 
             <div id="body-classifier" class="row row-body-classifier">
 
-               <!-- <div class="btns">
+               <div class="btns">
                     
-                    <button id="btn-entrega" class="btn btn-success btn-block">Entrega <span class="glyphicon glyphicon-bullhorn"></span></button> <br>
+                    <div class="voffset0"><button id="btn-entrega-body" class="btn btn-success btn-block btn-body">Entrega <span class="glyphicon glyphicon-bullhorn"></span></button></div>
 
-                    <button id="btn-solicita" class="btn btn-primary btn-block">Solicita <span class="glyphicon glyphicon-earphone"></span></button><br>
+                    <div class="voffset0"><button id="btn-solicita-body" class="btn btn-warning btn-block btn-body">Solicita <span class="glyphicon glyphicon-earphone"></span></button></div>
 
-                    <button  id="btn-bug" class="btn btn-danger btn-block">Bug <span class="glyphicon glyphicon-warning-sign"></span></button>
+                    <div class="voffset0"><button id="btn-bug-body" class="btn btn-danger btn-block btn-body">Bug <span class="glyphicon glyphicon-warning-sign"></span></button></div>
 
-                </div> -->
-
-            <div class="options">
- 
-                 <div id="entrega" class="row">
-                    <div class="list-group checked-list-box clearfix">
-                        <div class="clearfix visible-sm-block"></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Personas encontradas</div></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Estado personal</div></div>
-                        <div class="clearfix visible-sm-block"></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Lugares</div></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Instituciones</div></div>
-                        <div class="clearfix visible-sm-block"></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Cortes de agua</div></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Reposición de agua</div></div>
-                        <div class="clearfix visible-sm-block"></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Reposición de luz</div></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Corte de luz</div></div>
-                        <div class="clearfix visible-sm-block"></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Alerta natural</div></div>
-                        <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Otros</div></div>
-                        <div class="clearfix visible-sm-block"></div>
-                    </div>
                 </div>
-            </div>
-                
 
-               <!-- <div id="entrega">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <ul id="checked-list-box-entrega" class="list-group checked-list-box">
-                                <li value="1" class="list-group-item">Personas encontradas</li>
-                                <li value="2" class="list-group-item">Estado personal</li>
-                                <li value="3" class="list-group-item">Lugares</li>
-                                <li value="4" class="list-group-item">Instituciones</li>
-                                <li value="5" class="list-group-item">Cortes de agua</li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-6">
-                            <ul id="checked-list-box-entrega" class="list-group checked-list-box">
-                                <li value="6" class="list-group-item">Reposición de agua</li>
-                                <li value="7" class="list-group-item">Corte de luz</li>
-                                <li value="8" class="list-group-item">Reposición de luz</li>
-                                <li value="9" class="list-group-item">Alerta natural</li>
-                                <li value="10" class="list-group-item">Otros</li>
-                            </ul>
+                <div class="options">
+     
+                     <div id="entrega" class="row row-entrega" style="display:none">
+                        <div class="list-group checked-list-box clearfix">
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Personas encontradas</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Estado personal</div></div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Lugares</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Instituciones</div></div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Cortes de agua</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Reposición de agua</div></div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Reposición de luz</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Corte de luz</div></div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Alerta natural</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Otros</div></div>
+                            <div class="clearfix visible-sm-block"></div>
                         </div>
                     </div>
-                    <div class="row row-centered">
-                        <button id="btn-classification-entrega" type="submit" class="btn btn-primary">Clasificar <li class="glyphicon glyphicon-ok"></li></button>
-                    </div>
-                </div> -->
 
-
-                <!--<div id="solicita" style="display:none">
-                    <div class="row">
-                         <div class="col-xs-6">
-                            <ul id="checked-list-box-solicita" class="list-group checked-list-box">
-                                <li value="1" class="list-group-item">Personas perdidas</li>
-                                <li value="2" class="list-group-item">Medios de transporte</li>
-                                <li value="3" class="list-group-item">Ayuda damnificados</li>
-                                <li value="4" class="list-group-item">Voluntarios</li>
-                                <li value="5" class="list-group-item">Seguridad ciudadana</li>
-                                <li value="6" class="list-group-item">Lugares</li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-6">
-                            <ul id="checked-list-box-solicita" class="list-group checked-list-box">
-                                <li value="7" class="list-group-item">Instituciones</li>
-                                <li value="8" class="list-group-item">Agua</li>
-                                <li value="9" class="list-group-item">Luz</li>
-                                <li value="10" class="list-group-item">Alerta natural</li>
-                                <li value="11" class="list-group-item">Otros</li>
-                            </ul>
+                     <div id="solicita" class="row row-solicita" style="display:none">
+                        <div class="list-group checked-list-box clearfix">
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Personas perdidas</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Medios de transporte</div></div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Ayuda damnificados</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Voluntarios</div></div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Seguridad ciudadana</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Lugares</div></div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Instituciones</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Agua</div></div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Luz</div></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Alerta natural</div></div>
+                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Otros</div></div>
                         </div>
                     </div>
-                </div>
 
-            </div> -->
-
-            <div id="footer" class="row">
-                <div class="col-xs-12 col-sm-12">
-                    <button id="btn-clasificar" type="submit" class="btn btn-primary">Clasificar <li class="glyphicon glyphicon-ok"></li></button>
                 </div>
             </div>
 
-        </div>
-
-    	<!-- <div class="panel panel-primary">
-            
-            <div class="panel-heading">
-                
-            </div>
-
-            <div class="panel-body">
-                
-            </div>
-
-            
-
-            <div class="panel-footer">
-                Made in CITIAPS
-            </div>
-
-		</div>
-
-        <div id="botoncitos" class="row row-btn">
-            <button id="btn-entrega" type="submit" class="btn btn-primary">Entrega <li class="glyphicon glyphicon-ok"></li></button> <br><br>
-            <button id="btn-solicita" type="submit" class="btn btn-primary">Solicita <li class="glyphicon glyphicon-ok"></li></button> <br><br>
-            <button id="btn-bug" type="submit" class="btn btn-danger">Bug <li class="glyphicon glyphicon-remove"></li></button>
-        </div>
-
-        <div id="entrega" style="display:none">
-            <div class="row">
-                <div class="col-xs-6">
-                    <ul id="checked-list-box-entrega" class="list-group checked-list-box">
-                        <li value="1" class="list-group-item">Personas encontradas</li>
-                        <li value="2" class="list-group-item">Estado personal</li>
-                        <li value="3" class="list-group-item">Lugares</li>
-                        <li value="4" class="list-group-item">Instituciones</li>
-                        <li value="5" class="list-group-item">Cortes de agua</li>
-                    </ul>
+            <div id="footer" class="row clearfix  row-footer">
+                <div class="col-xs-4 col-footer-left">
+                    <button id="btn-entrega-footer" class="btn btn-success btn-footer" style="display:none">Entrega <span class="glyphicon glyphicon-bullhorn"></span></button>
                 </div>
-                <div class="col-xs-6">
-                    <ul id="checked-list-box-entrega" class="list-group checked-list-box">
-                        <li value="6" class="list-group-item">Reposición de agua</li>
-                        <li value="7" class="list-group-item">Corte de luz</li>
-                        <li value="8" class="list-group-item">Reposición de luz</li>
-                        <li value="9" class="list-group-item">Alerta natural</li>
-                        <li value="10" class="list-group-item">Otros</li>
-                    </ul>
+
+                <div class="col-xs-4">
+                    <button id="btn-clasificar" type="submit" class="btn btn-primary btn-footer" disabled>Clasificar <span class="glyphicon glyphicon-ok"></span></button>
                 </div>
-            </div>
-            <div class="row row-centered">
-                <button id="btn-classification-entrega" type="submit" class="btn btn-primary">Clasificar <li class="glyphicon glyphicon-ok"></li></button>
+
+                <div class="col-xs-4">
+                    <button id="btn-solicita-footer" class="btn btn-warning btn-footer" style="display:none">Solicita <span class="glyphicon glyphicon-earphone"></span></button>
+                </div>
             </div>
         </div>
-
-        <div id="solicita" style="display:none">
-            <div class="row">
-                 <div class="col-xs-6">
-                    <ul id="checked-list-box-solicita" class="list-group checked-list-box">
-                        <li value="1" class="list-group-item">Personas perdidas</li>
-                        <li value="2" class="list-group-item">Medios de transporte</li>
-                        <li value="3" class="list-group-item">Ayuda damnificados</li>
-                        <li value="4" class="list-group-item">Voluntarios</li>
-                        <li value="5" class="list-group-item">Seguridad ciudadana</li>
-                        <li value="6" class="list-group-item">Lugares</li>
-                    </ul>
-                </div>
-                <div class="col-xs-6">
-                    <ul id="checked-list-box-solicita" class="list-group checked-list-box">
-                        <li value="7" class="list-group-item">Instituciones</li>
-                        <li value="8" class="list-group-item">Agua</li>
-                        <li value="9" class="list-group-item">Luz</li>
-                        <li value="10" class="list-group-item">Alerta natural</li>
-                        <li value="11" class="list-group-item">Otros</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row row-centered">
-                <button id="btn-classification-solicita" type="submit" class="btn btn-primary">Clasificar <li class="glyphicon glyphicon-ok"></li></button>
-            </div>
-        </div> -->
 
         <script type="text/javascript">
             var arrayRandom = [];
