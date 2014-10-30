@@ -4,11 +4,11 @@
         <meta charset="utf-8" />        
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="../css/tweet.css" />
         
-        <script type="text/javascript" src="../js/jquery.js"></script>
-        <script type="text/javascript" src="../js/bootstrap.js"></script>
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../js/bootbox.js"></script>
         <script type="text/javascript" src="../js/tweet.js"></script>
 
@@ -28,7 +28,7 @@
                     A continuación se le presentarán una serie de tweets enviados durante una situación de emergencia  y usted tendrá que clasificarlos siguiendo las siguientes etiquetas:
                     <table class="table">
                     <tr>
-                        <th>Tengo:  Tweet entrega información </th>
+                        <th>Tengo:  Tweet entrega información</th>
                         <th>Necesito: Tweet solicita información </th>
                     </tr>
                     <tr>
@@ -37,47 +37,35 @@
                     </tr>
                     <tr>
                         <td>Estado personal: Todo tweet en que un individuo informa sobre su propio estado de salud. </td>
-                        <td></td>
-                    </tr> 
-                    <tr>
-                        <td></td>
                         <td>Medios de transporte: Todo tweet en que se manifieste la necesidad de contar con un medio de transporte o alguna necesidad urgente de movilidad urgente. </td>
                     </tr> 
                     <tr>
-                        <td></td>
+                        <td>Lugares:  Todo tweet en que se ofrezca información sobre un lugar geográfico específico o que entregue información sobre aspectos relacionados a la infraestructura de un lugar puntual.</td>
                         <td>Ayuda a damnificados: Todo tweet que manifieste la necesidad de contar con alimentos, ropa o medicamentos en función de entregárselos a alguien más. Cabrían todos los tweets en que se requieren objetos puntuales para entregar ayuda.</td>
                     </tr> 
                     <tr>
-                        <td></td>
+                        <td>Instituciones: Todo tweet que entregue información sobre alguna institución. Tweets donde la gente entrega datos de contacto de una institución, por ejemplo, albergues u otros. </td>
                         <td>Voluntarios: Todo tweet que indique la necesidad de contar con personal voluntario. Un tweet en esta categoría debe centrarse en el requisito de mano de obra para alguna labora de ayuda. </td>
                     </tr> 
                     <tr>
-                        <td></td>
+                        <td>Cortes de agua: Todo tweet que entregue información sobre cortes de agua potable.</td>
                         <td>Seguridad ciudadana: Todo tweet donde se indique una amenaza para la seguridad de algún grupo o población, de origen no natural. Cabrían todos los tweets en que se mencionen saqueos o se denuncien hechos delictivos de diversa índole.</td>
                     </tr> 
                     <tr>
-                        <td>Lugares:  Todo tweet en que se ofrezca información sobre un lugar geográfico específico o que entregue información sobre aspectos relacionados a la infraestructura de un lugar puntual.</td>
+                        <td>Reposición de agua: Todo tweet que entregue información sobre la reposición del agua potable.</td>
                         <td>Lugares: Todo tweet en que se solicite información sobre un lugar geográfico específico o de un lugar puntual. </td>
                     </tr> 
                     <tr>
-                        <td>Instituciones: Todo tweet que entregue información sobre alguna institución. Tweets donde la gente entrega datos de contacto de una institución, por ejemplo, albergues u otros. </td>
+                        <td>Cortes de luz: Todo tweet que entregue información sobre cortes de luz.</td>
                         <td>Instituciones: Todo tweet que solicite información sobre alguna institución. Tweets donde la gente pide datos de contacto de una institución, por ejemplo, albergues u otros. </td>
                     </tr>
                     <tr>
-                        <td>Cortes de agua: Todo tweet que entregue información sobre cortes de agua potable.</td>
+                        <td>Reposición de luz: Todo tweet que entregue información sobre la reposición de luz.</td>
                         <td>Agua: Todo tweet que solicite información sobre el estado del servicio de agua potable (corte o reposición).</td>
                     </tr>  
                     <tr>
-                        <td>Reposición de agua: Todo tweet que entregue información sobre la reposición del agua potable.</td>
                         <td></td>
-                    </tr>
-                    <tr>
-                        <td>Cortes de luz: Todo tweet que entregue información sobre cortes de luz.</td>
                         <td>Luz: Todo tweet que solicite información sobre el estado del suministro eléctrico (corte o reposición).</td>
-                    </tr>
-                    <tr>
-                        <td>Reposición de luz: Todo tweet que entregue información sobre la reposición de luz.</td>
-                        <td></td>
                     </tr>
                     <tr>
                         <td>Alerta natural: Todo tweet que entregue información respecto a una emergencia producida por causas naturales (tsunamis, incendios…)</td>
@@ -102,11 +90,8 @@
                         Tweet #<label id="tweetNumber"></label>
                     </div>
 
-                    <div class="col-xs-5 col-head-tipo">
-                        <button id="btn-entrega-head" class="btn btn-success btn-head" style="display:none" disabled>Entrega <span class="glyphicon glyphicon-bullhorn"></span></button>
+                    <div class="col-xs-5 col-head-tipo"></div>
 
-                        <button id="btn-solicita-head" class="btn btn-warning btn-head" style="display:none" disabled>Solicita <span class="glyphicon glyphicon-earphone"></span></button>
-                    </div>
                     <div class="col-xs-2 col-head-help">
                         <a href= "#"><span id="btn-help" class="glyphicon glyphicon-question-sign smaller" data-toggle="modal" data-target=".bs-example-modal-sm"></span></a>
                     </div>
@@ -134,44 +119,32 @@
      
                      <div id="entrega" class="row row-entrega" style="display:none">
                         <div class="list-group checked-list-box clearfix">
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Personas encontradas</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Estado personal</div></div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Lugares</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Instituciones</div></div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Cortes de agua</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Reposición de agua</div></div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Reposición de luz</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Corte de luz</div></div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Alerta natural</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Otros</div></div>
-                            <div class="clearfix visible-sm-block"></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="1" class="list-group-item">Personas encontradas</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="2" class="list-group-item">Estado personal</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="3" class="list-group-item">Lugares</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="4" class="list-group-item">Instituciones</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="5" class="list-group-item">Cortes de agua</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="6" class="list-group-item">Reposición de agua</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="7" class="list-group-item">Reposición de luz</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="8" class="list-group-item">Corte de luz</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="9" class="list-group-item">Alerta natural</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="10" class="list-group-item">Otros</div></div>
                         </div>
                     </div>
 
                      <div id="solicita" class="row row-solicita" style="display:none">
                         <div class="list-group checked-list-box clearfix">
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Personas perdidas</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Medios de transporte</div></div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Ayuda damnificados</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Voluntarios</div></div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Seguridad ciudadana</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Lugares</div></div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Instituciones</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Agua</div></div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Luz</div></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Alerta natural</div></div>
-                            <div class="clearfix visible-sm-block"></div>
-                            <div class="col-sm-3 col-md-3 voffset05"><div class="list-group-item">Otros</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="1" class="list-group-item">Personas perdidas</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="2" class="list-group-item">Medios de transporte</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="3" class="list-group-item">Ayuda damnificados</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="4" class="list-group-item">Voluntarios</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="5" class="list-group-item">Seguridad ciudadana</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="6" class="list-group-item">Lugares</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="7" class="list-group-item">Instituciones</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="8" class="list-group-item">Agua</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="9" class="list-group-item">Luz</div></div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="10" class="list-group-item">Alerta natural</div></div>                            
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 voffset05"><div value="11" class="list-group-item">Otros</div></div>
                         </div>
                     </div>
 
@@ -179,15 +152,15 @@
             </div>
 
             <div id="footer" class="row clearfix  row-footer">
-                <div class="col-xs-4 col-footer-left">
+                <div class="col-xs-4 col-footer">
                     <button id="btn-entrega-footer" class="btn btn-success btn-footer" style="display:none">Entrega <span class="glyphicon glyphicon-bullhorn"></span></button>
                 </div>
 
-                <div class="col-xs-4">
-                    <button id="btn-clasificar" type="submit" class="btn btn-primary btn-footer" disabled>Clasificar <span class="glyphicon glyphicon-ok"></span></button>
+                <div class="col-xs-4 col-footer">
+                    <button id="btn-clasificar" type="submit" class="btn btn-footer btn-clasificar" disabled>Clasificar <span class="glyphicon glyphicon-ok"></span></button>
                 </div>
 
-                <div class="col-xs-4">
+                <div class="col-xs-4 col-footer">
                     <button id="btn-solicita-footer" class="btn btn-warning btn-footer" style="display:none">Solicita <span class="glyphicon glyphicon-earphone"></span></button>
                 </div>
             </div>
