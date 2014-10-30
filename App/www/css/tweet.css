@@ -223,6 +223,10 @@ span{
     padding: 0px;   
 }
 
+.modal-close{
+    color: #ff0000;
+}
+
 .voffset05 { margin-top: 0.2em; }
 .voffset0  { margin-top: 1em; }
 .voffset1  { margin-top: 5em; }
