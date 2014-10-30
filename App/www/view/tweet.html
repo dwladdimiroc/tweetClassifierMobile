@@ -21,51 +21,66 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span class="modal-close">&times;</span><span class="sr-only">Close</span></button>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span class="modal-close">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
                         <h4 class="modal-title" id="myModalLabel">Ayuda</h4>
                     </div>
                     <div class="modal-body">
                     A continuación se le presentarán una serie de tweets enviados durante una situación de emergencia  y usted tendrá que clasificarlos siguiendo las siguientes etiquetas:
                     <table class="table">
                     <tr>
-                        <th>Tengo:  Tweet entrega información</th>
-                        <th>Necesito: Tweet solicita información </th>
+                        <th><strong>Tengo:</strong>  Tweet entrega información </th>
+                        <th><strong>Necesito:</strong> Tweet solicita información </th>
                     </tr>
                     <tr>
-                        <td>Personas Encontradas: Todo tweet que informe el hallazgo de una persona que estuvo desaparecida.</td>
-                        <td>Personas Perdidas: Todo tweet cuyo contenido sea solicitar información respecto de alguien específico o un grupo familiar específico. Necesidad de encontrar a alguien. </td>
+                        <td><strong>Personas Encontradas:</strong> Todo tweet que informe el hallazgo de una persona que estuvo desaparecida.</td>
+                        <td><strong>Personas Perdidas:</strong> Todo tweet cuyo contenido sea solicitar información respecto de alguien específico o un grupo familiar específico. Necesidad de encontrar a alguien. </td>
                     </tr>
                     <tr>
-                        <td>Estado personal: Todo tweet en que un individuo informa sobre su propio estado de salud. </td>
-                        <td>Medios de transporte: Todo tweet en que se manifieste la necesidad de contar con un medio de transporte o alguna necesidad urgente de movilidad urgente. </td>
+                        <td><strong>Estado personal:</strong> Todo tweet en que un individuo informa sobre su propio estado de salud. </td>
+                        <td></td>
                     </tr> 
-                    <tr>
-                        <td>Lugares:  Todo tweet en que se ofrezca información sobre un lugar geográfico específico o que entregue información sobre aspectos relacionados a la infraestructura de un lugar puntual.</td>
-                        <td>Ayuda a damnificados: Todo tweet que manifieste la necesidad de contar con alimentos, ropa o medicamentos en función de entregárselos a alguien más. Cabrían todos los tweets en que se requieren objetos puntuales para entregar ayuda.</td>
-                    </tr> 
-                    <tr>
-                        <td>Instituciones: Todo tweet que entregue información sobre alguna institución. Tweets donde la gente entrega datos de contacto de una institución, por ejemplo, albergues u otros. </td>
-                        <td>Voluntarios: Todo tweet que indique la necesidad de contar con personal voluntario. Un tweet en esta categoría debe centrarse en el requisito de mano de obra para alguna labora de ayuda. </td>
-                    </tr> 
-                    <tr>
-                        <td>Cortes de agua: Todo tweet que entregue información sobre cortes de agua potable.</td>
-                        <td>Seguridad ciudadana: Todo tweet donde se indique una amenaza para la seguridad de algún grupo o población, de origen no natural. Cabrían todos los tweets en que se mencionen saqueos o se denuncien hechos delictivos de diversa índole.</td>
-                    </tr> 
-                    <tr>
-                        <td>Reposición de agua: Todo tweet que entregue información sobre la reposición del agua potable.</td>
-                        <td>Lugares: Todo tweet en que se solicite información sobre un lugar geográfico específico o de un lugar puntual. </td>
-                    </tr> 
-                    <tr>
-                        <td>Cortes de luz: Todo tweet que entregue información sobre cortes de luz.</td>
-                        <td>Instituciones: Todo tweet que solicite información sobre alguna institución. Tweets donde la gente pide datos de contacto de una institución, por ejemplo, albergues u otros. </td>
-                    </tr>
-                    <tr>
-                        <td>Reposición de luz: Todo tweet que entregue información sobre la reposición de luz.</td>
-                        <td>Agua: Todo tweet que solicite información sobre el estado del servicio de agua potable (corte o reposición).</td>
-                    </tr>  
                     <tr>
                         <td></td>
-                        <td>Luz: Todo tweet que solicite información sobre el estado del suministro eléctrico (corte o reposición).</td>
+                        <td><strong>Medios de transporte:</strong> Todo tweet en que se manifieste la necesidad de contar con un medio de transporte o alguna necesidad urgente de movilidad urgente. </td>
+                    </tr> 
+                    <tr>
+                        <td></td>
+                        <td><strong>Ayuda a damnificados:</strong> Todo tweet que manifieste la necesidad de contar con alimentos, ropa o medicamentos en función de entregárselos a alguien más. Cabrían todos los tweets en que se requieren objetos puntuales para entregar ayuda.</td>
+                    </tr> 
+                    <tr>
+                        <td></td>
+                        <td><strong>Voluntarios:</strong> Todo tweet que indique la necesidad de contar con personal voluntario. Un tweet en esta categoría debe centrarse en el requisito de mano de obra para alguna labora de ayuda. </td>
+                    </tr> 
+                    <tr>
+                        <td></td>
+                        <td><strong>Seguridad ciudadana:</strong> Todo tweet donde se indique una amenaza para la seguridad de algún grupo o población, de origen no natural. Cabrían todos los tweets en que se mencionen saqueos o se denuncien hechos delictivos de diversa índole.</td>
+                    </tr> 
+                    <tr>
+                        <td><strong>Lugares:</strong>  Todo tweet en que se ofrezca información sobre un lugar geográfico específico o que entregue información sobre aspectos relacionados a la infraestructura de un lugar puntual.</td>
+                        <td><strong>Lugares:</strong> Todo tweet en que se solicite información sobre un lugar geográfico específico o de un lugar puntual. </td>
+                    </tr> 
+                    <tr>
+                        <td><strong>Instituciones:</strong> Todo tweet que entregue información sobre alguna institución. Tweets donde la gente entrega datos de contacto de una institución, por ejemplo, albergues u otros. </td>
+                        <td><strong>Instituciones:</strong> Todo tweet que solicite información sobre alguna institución. Tweets donde la gente pide datos de contacto de una institución, por ejemplo, albergues u otros. </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cortes de agua:</strong> Todo tweet que entregue información sobre cortes de agua potable.</td>
+                        <td><strong>Agua:</strong> Todo tweet que solicite información sobre el estado del servicio de agua potable (corte o reposición).</td>
+                    </tr>  
+                    <tr>
+                        <td><strong>Reposición de agua:</strong> Todo tweet que entregue información sobre la reposición del agua potable.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cortes de luz:</strong> Todo tweet que entregue información sobre cortes de luz.</td>
+                        <td><strong>Luz:</strong> Todo tweet que solicite información sobre el estado del suministro eléctrico (corte o reposición).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reposición de luz:</strong> Todo tweet que entregue información sobre la reposición de luz.</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Alerta natural: Todo tweet que entregue información respecto a una emergencia producida por causas naturales (tsunamis, incendios…)</td>
@@ -90,8 +105,11 @@
                         Tweet #<label id="tweetNumber"></label>
                     </div>
 
-                    <div class="col-xs-5 col-head-tipo"></div>
+                    <div class="col-xs-5 col-head-tipo">
+                        <button id="btn-entrega-head" class="btn btn-success btn-head" style="display:none" disabled>Entrega <span class="glyphicon glyphicon-bullhorn"></span></button>
 
+                        <button id="btn-solicita-head" class="btn btn-warning btn-head" style="display:none" disabled>Solicita <span class="glyphicon glyphicon-earphone"></span></button>
+                    </div>
                     <div class="col-xs-2 col-head-help">
                         <a href= "#"><span id="btn-help" class="glyphicon glyphicon-question-sign smaller" data-toggle="modal" data-target=".bs-example-modal-sm"></span></a>
                     </div>
@@ -111,7 +129,7 @@
 
                     <div class="voffset0"><button id="btn-solicita-body" class="btn btn-warning btn-block btn-body">Solicita <span class="glyphicon glyphicon-earphone"></span></button></div>
 
-                    <div class="voffset0"><button id="btn-bug-body" class="btn btn-danger btn-block btn-body">Bug <span class="glyphicon glyphicon-warning-sign"></span></button></div>
+                    <div class="voffset0"><button id="btn-bug-body" class="btn btn-danger btn-block btn-body">Otro idioma <span class="glyphicon glyphicon-warning-sign"></span></button></div>
 
                 </div>
 

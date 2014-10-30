@@ -1,6 +1,6 @@
 //Reconocimiento de los datos en la BD
 function checkTweet(id){
-    var urlTweet = 'http://158.170.35.87/tweetMobile/tweetClassifier/' + id;
+    var urlTweet = 'http://158.170.35.87:8080/tweetMobile/tweetClassifier/' + id;
 
     jQuery.support.cors = true;
 
@@ -20,7 +20,7 @@ function checkTweet(id){
 
 //Reconocimiento del tamaño de la BD
 function totalTweet(){
-    var urlTweet = 'http://158.170.35.87/tweetMobile/tweetClassifierCount/';
+    var urlTweet = 'http://158.170.35.87:8080/tweetMobile/tweetClassifierCount/';
     var numTweet;
 
     jQuery.support.cors = true;
@@ -297,7 +297,7 @@ $(document).ready(function(){
             jQuery.support.cors = true;
 
            $.ajax({
-    	        url: "http://158.170.35.87/tweetMobile/classifier/",
+    	        url: "http://158.170.35.87:8080/tweetMobile/classifier/",
     	        type: "POST",
     	        data: { classification : JSON.stringify(classTweet) ,
     	        		tweet : document.getElementById("tweetText").innerHTML},
@@ -322,6 +322,7 @@ $(document).ready(function(){
         $(".btns").hide();
         $('#btn-entrega-footer').show();
         $("#btn-solicita-footer").show();
+        $("#btn-bug-footer").show();
         $('#btn-entrega-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
     });
@@ -332,6 +333,7 @@ $(document).ready(function(){
         $(".btns").hide();
         $('#btn-entrega-footer').show();
         $("#btn-solicita-footer").show();
+        $("#btn-bug-footer").show();
         $('#btn-solicita-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
     });
@@ -362,7 +364,29 @@ $(document).ready(function(){
                 jQuery.support.cors = true;
 
                $.ajax({
-                    url: "http://158.170.35.87/tweetMobile/language/",
+                    url: "http://158.170.35.87:8080/tweetMobile/language/",
+                    type: "POST",
+                    data: { tweet : document.getElementById("tweetText").innerHTML},
+                    success: function(data) {
+                        initTweet();
+                    },
+                    error: function(req,error) { 
+                        console.log(req.responseText);
+                    }
+                });
+            }  
+        });
+    });
+
+    $('#btn-bug-footer').click(function (event) {
+        bootbox.confirm("¿Está seguro de eliminar este tweet <strong>" + document.getElementById("tweetText").innerHTML + "</strong> ?", function(result) {
+            if(result){
+                event.preventDefault(); 
+  
+                jQuery.support.cors = true;
+
+               $.ajax({
+                    url: "http://158.170.35.87:8080/tweetMobile/language/",
                     type: "POST",
                     data: { tweet : document.getElementById("tweetText").innerHTML},
                     success: function(data) {
