@@ -334,6 +334,7 @@ $(document).ready(function(){
         $(".btns").hide();
         $('#btn-entrega-footer').show();
         $("#btn-solicita-footer").show();
+        $("#btn-bug-footer").show();
         $('#btn-entrega-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
         $('#btn-entrega-head').show();
@@ -345,6 +346,7 @@ $(document).ready(function(){
         $(".btns").hide();
         $('#btn-entrega-footer').show();
         $("#btn-solicita-footer").show();
+        $("#btn-bug-footer").show();
         $('#btn-solicita-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
         $('#btn-solicita-head').show();
@@ -371,6 +373,28 @@ $(document).ready(function(){
 
 
     $('#btn-bug-body').click(function (event) {
+        bootbox.confirm("¿Está seguro de eliminar este tweet <strong>" + document.getElementById("tweetText").innerHTML + "</strong> ?", function(result) {
+            if(result){
+                event.preventDefault(); 
+  
+                jQuery.support.cors = true;
+
+               $.ajax({
+                    url: "http://158.170.35.87/tweetMobile/language/",
+                    type: "POST",
+                    data: { tweet : document.getElementById("tweetText").innerHTML},
+                    success: function(data) {
+                        initTweet();
+                    },
+                    error: function(req,error) { 
+                        console.log(req.responseText);
+                    }
+                });
+            }  
+        });
+    });
+
+    $('#btn-bug-footer').click(function (event) {
         bootbox.confirm("¿Está seguro de eliminar este tweet <strong>" + document.getElementById("tweetText").innerHTML + "</strong> ?", function(result) {
             if(result){
                 event.preventDefault(); 
