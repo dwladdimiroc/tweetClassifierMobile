@@ -315,6 +315,9 @@ $(document).ready(function(){
                 }
             });
         }
+        else{
+            alert("Debe seleccionar por lo menos una categoría de clasificación");
+        }
     });
 
     $('#btn-entrega-body').click(function (event) {
