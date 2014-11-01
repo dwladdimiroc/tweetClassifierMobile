@@ -7,10 +7,6 @@ button{
     width: 120px;
 }
 
-.close{
-    color: #FFFFFF;
-}
-
 span{
     color: #FFFFFF;
 }
@@ -245,13 +241,19 @@ span{
     padding: 0px;   
 }
 
-.modal-close{
-    color: #ff0000;
-}
 
 .btn-help-wrapper{
     text-align: center;
 }
+
+#btn-pers-enc, #btn-est-pers, #btn-lugares, #btn-inst, #btn-corte-agua, #btn-repo-agua, #btn-repo-luz, #btn-corte-luz, #btn-aler-natu, #btn-otro-entrega{
+    width: 200px;
+}
+
+#btn-pers-perd, #btn-trans, #btn-ayu-damn, #btn-volun, #btn-seg-ciud, #btn-places, #btn-institu, #btn-agua, #btn-luz, #btn-natu-alert, #btn-otro-solicita{
+    width: 200px;
+}
+    
 
 
 
