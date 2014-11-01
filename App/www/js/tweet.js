@@ -357,7 +357,7 @@ $(document).ready(function(){
 
 
     //modal ayuda
-    
+
     $('#btn-entrega-help').click(function (event){
         $("#ayuda-main").hide();
         $("#entrega-main").show();
@@ -375,91 +375,155 @@ $(document).ready(function(){
         $("#entrega-main").hide();
         $("#solicita-main").hide();
         $("#volver-footer").hide();
+        $("#info-text").hide();
     });
 
     $('#btn-pers-enc').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que informe el hallazgo de una persona que estuvo desaparecida.");
     });
 
 
     $('#btn-est-pers').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet en que un individuo informa sobre su propio estado de salud.");
     });
 
     $('#btn-lugares').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet en que se ofrezca información sobre un lugar geográfico específico o que entregue información sobre aspectos relacionados a la infraestructura de un lugar puntual.");
     });
 
     $('#btn-inst').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que entregue información sobre alguna institución. Tweets donde la gente entrega datos de contacto de una institución, por ejemplo, albergues u otros.");        
     });
 
     $('#btn-corte-agua').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que entregue información sobre cortes de agua potable.");        
     });
 
     $('#btn-repo-agua').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que entregue información sobre la reposición del agua potable.");
     });
 
     $('#btn-repo-luz').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que entregue información sobre la reposición de luz.");
     });
 
     $('#btn-corte-luz').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que entregue información sobre cortes de luz.");
     });
 
     $('#btn-aler-natu').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que entregue información respecto a una emergencia producida por causas naturales (tsunamis, incendios…).");
     });
 
     $('#btn-otro-entrega').click(function (event){
         $("#entrega-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet en que se entregue información sobre un evento en curso, no relacionado a las categorías anteriores.");
     });
 
     $('#btn-pers-perd').click(function (event){
-        $("#solicita-main").hide();       
+        $("#solicita-main").hide();  
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet cuyo contenido sea solicitar información respecto de alguien específico o un grupo familiar específico. Necesidad de encontrar a alguien.");     
     });
 
     $('#btn-trans').click(function (event){
         $("#solicita-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet en que se manifieste la necesidad de contar con un medio de transporte o alguna necesidad urgente de movilidad urgente.");
     });
     
     $('#btn-ayu-damn').click(function (event){
         $("#solicita-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que manifieste la necesidad de contar con alimentos, ropa o medicamentos en función de entregárselos a alguien más. Cabrían todos los tweets en que se requieren objetos puntuales para entregar ayuda.");
     });
 
     $('#btn-volun').click(function (event){
         $("#solicita-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que indique la necesidad de contar con personal voluntario. Un tweet en esta categoría debe centrarse en el requisito de mano de obra para alguna labora de ayuda.");
     });
 
     $('#btn-seg-ciud').click(function (event){
         $("#solicita-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet donde se indique una amenaza para la seguridad de algún grupo o población, de origen no natural. Cabrían todos los tweets en que se mencionen saqueos o se denuncien hechos delictivos de diversa índole");
     });
 
     $('#btn-places').click(function (event){
         $("#solicita-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet en que se solicite información sobre un lugar geográfico específico o de un lugar puntual");
     });
 
     $('#btn-institu').click(function (event){
         $("#solicita-main").hide(); 
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que solicite información sobre alguna institución. Tweets donde la gente pide datos de contacto de una institución, por ejemplo, albergues u otros.");
     });
 
     $('#btn-agua').click(function (event){
         $("#solicita-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que solicite información sobre el estado del servicio de agua potable (corte o reposición).");
     });
 
     $('#btn-luz').click(function (event){
         $("#solicita-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que solicite información sobre el estado del suministro eléctrico (corte o reposición).");
     });
 
     $('#btn-natu-alert').click(function (event){
         $("#solicita-main").hide();
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet que solicite información respecto a una emergencia producida por causas naturales (tsunamis, incendios…).");
     });
 
     $('#btn-otro-solicita').click(function (event){
         $("#solicita-main").hide(); 
+        $("#info-text").show();
+        $("#info-text").empty();
+        $("#info-text").append("Todo tweet en que se solicite información sobre un evento en curso, no relacionado a las categorías anteriores.");
     });
 
     //FIN MODAL AYUDA
