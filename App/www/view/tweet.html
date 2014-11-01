@@ -27,73 +27,91 @@
                         </button>
                         <h4 class="modal-title" id="myModalLabel">Ayuda</h4>
                     </div>
-                    <div class="modal-body">
-                    A continuación se le presentarán una serie de tweets enviados durante una situación de emergencia  y usted tendrá que clasificarlos siguiendo las siguientes etiquetas:
-                    <table class="table">
-                    <tr>
-                        <th><strong>Tengo:</strong>  Tweet entrega información </th>
-                        <th><strong>Necesito:</strong> Tweet solicita información </th>
-                    </tr>
-                    <tr>
-                        <td><strong>Personas Encontradas:</strong> Todo tweet que informe el hallazgo de una persona que estuvo desaparecida.</td>
-                        <td><strong>Personas Perdidas:</strong> Todo tweet cuyo contenido sea solicitar información respecto de alguien específico o un grupo familiar específico. Necesidad de encontrar a alguien. </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Estado personal:</strong> Todo tweet en que un individuo informa sobre su propio estado de salud. </td>
-                        <td></td>
-                    </tr> 
-                    <tr>
-                        <td></td>
-                        <td><strong>Medios de transporte:</strong> Todo tweet en que se manifieste la necesidad de contar con un medio de transporte o alguna necesidad urgente de movilidad urgente. </td>
-                    </tr> 
-                    <tr>
-                        <td></td>
-                        <td><strong>Ayuda a damnificados:</strong> Todo tweet que manifieste la necesidad de contar con alimentos, ropa o medicamentos en función de entregárselos a alguien más. Cabrían todos los tweets en que se requieren objetos puntuales para entregar ayuda.</td>
-                    </tr> 
-                    <tr>
-                        <td></td>
-                        <td><strong>Voluntarios:</strong> Todo tweet que indique la necesidad de contar con personal voluntario. Un tweet en esta categoría debe centrarse en el requisito de mano de obra para alguna labora de ayuda. </td>
-                    </tr> 
-                    <tr>
-                        <td></td>
-                        <td><strong>Seguridad ciudadana:</strong> Todo tweet donde se indique una amenaza para la seguridad de algún grupo o población, de origen no natural. Cabrían todos los tweets en que se mencionen saqueos o se denuncien hechos delictivos de diversa índole.</td>
-                    </tr> 
-                    <tr>
-                        <td><strong>Lugares:</strong>  Todo tweet en que se ofrezca información sobre un lugar geográfico específico o que entregue información sobre aspectos relacionados a la infraestructura de un lugar puntual.</td>
-                        <td><strong>Lugares:</strong> Todo tweet en que se solicite información sobre un lugar geográfico específico o de un lugar puntual. </td>
-                    </tr> 
-                    <tr>
-                        <td><strong>Instituciones:</strong> Todo tweet que entregue información sobre alguna institución. Tweets donde la gente entrega datos de contacto de una institución, por ejemplo, albergues u otros. </td>
-                        <td><strong>Instituciones:</strong> Todo tweet que solicite información sobre alguna institución. Tweets donde la gente pide datos de contacto de una institución, por ejemplo, albergues u otros. </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cortes de agua:</strong> Todo tweet que entregue información sobre cortes de agua potable.</td>
-                        <td><strong>Agua:</strong> Todo tweet que solicite información sobre el estado del servicio de agua potable (corte o reposición).</td>
-                    </tr>  
-                    <tr>
-                        <td><strong>Reposición de agua:</strong> Todo tweet que entregue información sobre la reposición del agua potable.</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cortes de luz:</strong> Todo tweet que entregue información sobre cortes de luz.</td>
-                        <td><strong>Luz:</strong> Todo tweet que solicite información sobre el estado del suministro eléctrico (corte o reposición).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Reposición de luz:</strong> Todo tweet que entregue información sobre la reposición de luz.</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Alerta natural: Todo tweet que entregue información respecto a una emergencia producida por causas naturales (tsunamis, incendios…)</td>
-                        <td>Alerta natural: Todo tweet que solicite información respecto a una emergencia producida por causas naturales (tsunamis, incendios…)</td>
-                    </tr>
-                    <tr>
-                        <td>Otros: Todo tweet en que se entregue información sobre un evento en curso, no relacionado a las categorías anteriores. </td>
-                        <td>Otros: Todo tweet en que se solicite información sobre un evento en curso, no relacionado a las categorías anteriores. </td>
-                    </tr>
-                    </table>
+                    <div class="modal-body" id="ayuda-main">
+                        <table class="table" border="0">
+                            <div class="main-help">    
+                                <tr>
+                                    <th>
+                                        <div class = "btn-help-wrapper">
+                                            <button type="button" class="btn btn-success" id="btn-entrega-help">Entrega
+                                                <span class="glyphicon glyphicon-bullhorn"></span>
+                                            </button>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <div class="btn-help-wrapper">
+                                            <button type="button" class="btn btn-warning" id="btn-solicita-help">Solicita
+                                                <span class="glyphicon glyphicon-earphone"></span>
+                                            </button>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </div>
+                        </table>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <div class="modal-body" id="entrega-main" style="display:none;">
+                        <table class="table" border="0">
+                            <div class="class-entre-help">
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-default" id="btn-pers-enc">
+                                            Personas encontradas</button>
+                                    </td>
+                                    <td><button type="button" class="btn btn-default" id="btn-est-pers">Estado personal</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default" id="btn-lugares">Lugares</button></td>
+                                    <td><button type="button" class="btn btn-default" id="btn-inst">Instituciones</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default" id="btn-corte-agua">Cortes de agua</button></td>
+                                    <td><button type="button" class="btn btn-default" id="btn-repo-agua">Reposición de agua</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default" id="btn-repo-luz">Reposición de luz</button></td>
+                                    <td><button type="button" class="btn btn-default" id="btn-corte-luz">Corte de luz</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default" id="btn-aler-natu">Alerta natural</button></td>
+                                    <td><button type="button" class="btn btn-default" id="btn-otro-entrega">Otros</button></td>
+                                </tr>
+                            </div>
+                        </table>
+                    </div>
+
+                    <div class="modal-body" id="solicita-main" style="display:none;">
+                        <table class="table" border="0">
+                            <div class="class-entre-help">
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-default" id="btn-pers-perd">
+                                            Personas perdidas</button>
+                                    </td>
+                                    <td><button type="button" class="btn btn-default" id="btn-trans">Medios de transporte</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default" id="btn-ayu-damn">Ayuda damnificados</button></td>
+                                    <td><button type="button" class="btn btn-default" id="btn-volun">Voluntarios</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default" id="btn-seg-ciud">Seguridad ciudadana</button></td>
+                                    <td><button type="button" class="btn btn-default" id="btn-places">Lugares</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default" id="btn-institu">Instituciones</button></td>
+                                    <td><button type="button" class="btn btn-default" id="btn-agua">Agua</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default" id="btn-luz">Luz</button></td>
+                                    <td><button type="button" class="btn btn-default" id="btn-natu-alert">Alerta natural</button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button" class="btn btn-default" id="btn-otro-solicita">Otros</button></td>
+                                </tr>
+                            </div>
+                        </table>
                     </div>
                 </div>
             </div>

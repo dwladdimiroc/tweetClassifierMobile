@@ -355,6 +355,310 @@ $(document).ready(function(){
         $("#btn-solicita-footer").prop("disabled", true);
     });
 
+    $('#btn-entrega-help').click(function (event){
+        $("#ayuda-main").hide();
+        $("#entrega-main").show();
+    });
+
+    $('#btn-solicita-help').click(function (event){
+        $("#ayuda-main").hide();
+        $("#solicita-main").show();
+    });
+
+    $('#btn-pers-enc').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+
+    $('#btn-est-pers').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+    $('#btn-lugares').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+    $('#btn-inst').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+    $('#btn-corte-agua').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+    $('#btn-repo-agua').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+    $('#btn-repo-luz').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+    $('#btn-corte-luz').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+    $('#btn-aler-natu').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+    $('#btn-otro-entrega').click(function (event){
+        $("#btn-pers-enc").hide();
+        $("#btn-est-pers").hide();
+        $("#btn-lugares").hide();
+        $("#btn-inst").hide();
+        $("#btn-corte-agua").hide();
+        $("#btn-repo-agua").hide();
+        $("#btn-repo-luz").hide();
+        $("#btn-corte-luz").hide();
+        $("#btn-aler-natu").hide();
+        $("#btn-otro-entrega").hide();
+    });
+
+    $('#btn-pers-perd').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide();        
+    });
+
+    $('#btn-trans').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+    
+    $('#btn-ayu-damn').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+
+    $('#btn-volun').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+
+    $('#btn-seg-ciud').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+
+    $('#btn-places').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+
+    $('#btn-institu').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+
+    $('#btn-agua').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+
+    $('#btn-luz').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+
+    $('#btn-natu-alert').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+
+    $('#btn-otro-solicita').click(function (event){
+        $("#btn-pers-perd").hide();
+        $("#btn-trans").hide();
+        $("#btn-ayu-damn").hide();
+        $("#btn-volun").hide();
+        $("#btn-seg-ciud").hide();
+        $("#btn-places").hide();
+        $("#btn-institu").hide();
+        $("#btn-agua").hide();
+        $("#btn-luz").hide();
+        $("#btn-natu-alert").hide();
+        $("#btn-otro-solicita").hide(); 
+    });
+
+
+
+
+
+
+
+
+
+
 
     $('#btn-bug-body').click(function (event) {
         bootbox.confirm("¿Está seguro de eliminar este tweet <strong>" + document.getElementById("tweetText").innerHTML + "</strong> ?", function(result) {
@@ -400,7 +704,7 @@ $(document).ready(function(){
         });
     });
 
-    //$('#btn-help').click(function(event){
+    // $('#btn-help').click(function(event){
 
     //});
 });
