@@ -39,8 +39,6 @@ function totalTweet(){
   });
 }
 
-
-
 //Tweet a analizar
 function initTweet() {
     totalTweet();
@@ -316,7 +314,24 @@ $(document).ready(function(){
             });
         }
         else{
-            alert("Debe seleccionar por lo menos una categoría de clasificación");
+            //alert("Debe seleccionar por lo menos una categoría de clasificación");
+            
+            toastr.options = {
+              "closeButton": false,
+              "debug": false,
+              "positionClass": "toast-bottom-right",
+              "onclick": null,
+              "showDuration": "300",
+              "hideDuration": "1000",
+              "timeOut": "1500",
+              "extendedTimeOut": "1000",
+              "showEasing": "swing",
+              "hideEasing": "linear",
+              "showMethod": "fadeIn",
+              "hideMethod": "fadeOut"
+            }
+
+            toastr.warning('Debe seleccionar al menos una categoría');
         }
     });
 
