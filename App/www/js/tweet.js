@@ -294,12 +294,28 @@ $(document).ready(function(){
       
             jQuery.support.cors = true;
 
+            $.blockUI({ 
+                css: { 
+                    border: 'none', 
+                    padding: '15px', 
+                    backgroundColor: '#000', 
+                    '-webkit-border-radius': '10px', 
+                    '-moz-border-radius': '10px', 
+                    opacity: .5, 
+                    color: '#fff' 
+                },
+                message:
+                    "Clasificando..."
+                
+            });
+
            $.ajax({
     	        url: "http://158.170.35.87:8080/tweetMobile/classifier/",
     	        type: "POST",
     	        data: { classification : JSON.stringify(classTweet) ,
     	        		tweet : document.getElementById("tweetText").innerHTML},
     	        success: function(data) {
+                    $.unblockUI();
                     var idTweet = parseInt(document.getElementById("tweetNumber").innerHTML) - 1;
                     var arrayRandom = JSON.parse(window.localStorage.getItem("arrayRandom"));
                     arrayRandom.push(idTweet);
@@ -307,7 +323,22 @@ $(document).ready(function(){
                     clearCheckList();
                     initTweet();
                 },
-                error: function(req,error) { 
+                error: function(req,error) {
+                    $.blockUI({ 
+                        css: { 
+                            border: 'none', 
+                            padding: '15px', 
+                            backgroundColor: '#000', 
+                            '-webkit-border-radius': '10px', 
+                            '-moz-border-radius': '10px', 
+                            opacity: .5, 
+                            color: '#fff' 
+                        },
+                        message:
+                            "Error"
+                        
+                    });
+                    setTimeout($.unblockUI, 2000);
                     console.log(req.responseText);
                     //console.log(error);
                 }
@@ -553,36 +584,44 @@ $(document).ready(function(){
   
                 jQuery.support.cors = true;
 
-               $.ajax({
-                    url: "http://158.170.35.87:8080/tweetMobile/language/",
-                    type: "POST",
-                    data: { tweet : document.getElementById("tweetText").innerHTML},
-                    success: function(data) {
-                        initTweet();
+                $.blockUI({ 
+                    css: { 
+                        border: 'none', 
+                        padding: '15px', 
+                        backgroundColor: '#000', 
+                        '-webkit-border-radius': '10px', 
+                        '-moz-border-radius': '10px', 
+                        opacity: .5, 
+                        color: '#fff' 
                     },
-                    error: function(req,error) { 
-                        console.log(req.responseText);
-                    }
+                    message:
+                        "Borrando..."
+                    
                 });
-            }  
-        });
-    });
-
-    $('#btn-bug-footer').click(function (event) {
-        bootbox.confirm("¿Está seguro de eliminar este tweet <strong>" + document.getElementById("tweetText").innerHTML + "</strong> ?", function(result) {
-            if(result){
-                event.preventDefault(); 
-  
-                jQuery.support.cors = true;
-
                $.ajax({
                     url: "http://158.170.35.87:8080/tweetMobile/language/",
                     type: "POST",
                     data: { tweet : document.getElementById("tweetText").innerHTML},
                     success: function(data) {
+                        $.unblockUI();
                         initTweet();
                     },
                     error: function(req,error) { 
+                    $.blockUI({ 
+                        css: { 
+                            border: 'none', 
+                            padding: '15px', 
+                            backgroundColor: '#000', 
+                            '-webkit-border-radius': '10px', 
+                            '-moz-border-radius': '10px', 
+                            opacity: .5, 
+                            color: '#fff' 
+                        },
+                        message:
+                            "Error"
+                        
+                    });
+                    setTimeout($.unblockUI, 2000);
                         console.log(req.responseText);
                     }
                 });
