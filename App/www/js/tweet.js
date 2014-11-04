@@ -371,6 +371,7 @@ $(document).ready(function(){
         $("#entrega").show();
         $(".btns").hide();
         $("#btn-volver-main").show();
+        $("#btn-entrega-head").show();
         $('#btn-entrega-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
     });
@@ -380,6 +381,7 @@ $(document).ready(function(){
         $("#solicita").show();
         $(".btns").hide();
         $("#btn-volver-main").show();
+        $("#btn-solicita-head").show();
         $('#btn-solicita-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
     });
@@ -388,6 +390,8 @@ $(document).ready(function(){
         $("#entrega").hide();
         $("#solicita").hide();
         $("#btn-volver-main").hide();
+        $("#btn-entrega-head").hide(); 
+        $("#btn-solicita-head").hide();   
         $(".btns").show();
     });
 
