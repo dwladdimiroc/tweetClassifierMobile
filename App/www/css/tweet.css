@@ -254,7 +254,9 @@ span{
     width: 200px;
 }
     
-
+#btn-volver-main{
+    background-color: #FFB247;
+}
 
 
 .voffset05 { margin-top: 0.2em; }
