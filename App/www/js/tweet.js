@@ -292,6 +292,10 @@ $(document).ready(function(){
             $('#btn-entrega-footer').prop("disabled", false);
             $('#btn-solicita-footer').prop("disabled", false);
             $('#btn-clasificar').prop("disabled", true);
+            $("#btn-lang-head").hide();
+            $("#btn-entrega-head").hide();
+            $("#btn-solicita-head").hide();
+      
       
             jQuery.support.cors = true;
 
@@ -373,6 +377,7 @@ $(document).ready(function(){
         $("#btn-entrega-footer").show();
         $("#btn-solicita-footer").show();
         $("#btn-entrega-head").show();
+        $("#btn-lang-head").show();
         $('#btn-entrega-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
     });
@@ -380,17 +385,11 @@ $(document).ready(function(){
     $('#btn-entrega-footer').click(function (event) {
         $("#solicita").hide();
         $("#entrega").show();
+        $("#btn-solicita-head").hide();
+        $("#btn-entrega-head").show();
         $('#btn-entrega-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
         $('#btn-solicita-footer').prop("disabled",false);
-    });
-
-    $('#btn-solicita-footer').click(function (event) {
-        $("#solicita").show();
-        $("#entrega").hide();
-        $('#btn-entrega-footer').prop("disabled", false);
-        $('#btn-clasificar').prop("disabled", false);
-        $('#btn-solicita-footer').prop("disabled",true);
     });
 
 
@@ -399,8 +398,20 @@ $(document).ready(function(){
         $(".btns").hide();
         $("#btn-solicita-footer").show();
         $("#btn-entrega-footer").show();
+        $("#btn-solicita-head").show();
+        $("#btn-lang-head").show();
         $('#btn-solicita-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
+    });
+
+    $('#btn-solicita-footer').click(function (event) {
+        $("#solicita").show();
+        $("#entrega").hide();
+        $("#btn-entrega-head").hide();
+        $("#btn-solicita-head").show();
+        $('#btn-entrega-footer').prop("disabled", false);
+        $('#btn-clasificar').prop("disabled", false);
+        $('#btn-solicita-footer').prop("disabled",true);
     });
 
     $('#btn-volver-main').click(function (event) {
@@ -635,6 +646,67 @@ $(document).ready(function(){
                         console.log(req.responseText);
                     }
                 });
+            }  
+        });
+    });
+
+
+    $('#btn-lang-head').click(function (event) {
+        bootbox.confirm("¿Está seguro de eliminar este tweet <strong>" + document.getElementById("tweetText").innerHTML + "</strong> ?", function(result) {
+            if(result){
+                event.preventDefault(); 
+  
+                jQuery.support.cors = true;
+
+                $.blockUI({ 
+                    css: { 
+                        border: 'none', 
+                        padding: '15px', 
+                        backgroundColor: '#000', 
+                        '-webkit-border-radius': '10px', 
+                        '-moz-border-radius': '10px', 
+                        opacity: .5, 
+                        color: '#fff' 
+                    },
+                    message:
+                        "Borrando..."
+                    
+                });
+               $.ajax({
+                    url: "http://158.170.35.87:8080/tweetMobile/language/",
+                    type: "POST",
+                    data: { tweet : document.getElementById("tweetText").innerHTML},
+                    success: function(data) {
+                        $.unblockUI();
+                        initTweet();
+                    },
+                    error: function(req,error) { 
+                    $.blockUI({ 
+                        css: { 
+                            border: 'none', 
+                            padding: '15px', 
+                            backgroundColor: '#000', 
+                            '-webkit-border-radius': '10px', 
+                            '-moz-border-radius': '10px', 
+                            opacity: .5, 
+                            color: '#fff' 
+                        },
+                        message:
+                            "Error"
+                        
+                    });
+                    setTimeout($.unblockUI, 2000);
+                        console.log(req.responseText);
+                    }
+                });
+                $("#entrega").hide();
+                $("#solicita").hide();
+                $("#btn-lang-head").hide();
+                $("#btn-solicita-footer").hide();
+                $("#btn-entrega-footer").hide();
+                $("#btn-entrega-head").hide(); 
+                $("#btn-solicita-head").hide();  
+                $(".btns").show();
             }  
         });
     });
