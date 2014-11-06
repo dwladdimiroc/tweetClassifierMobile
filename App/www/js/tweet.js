@@ -414,6 +414,7 @@ $(document).ready(function(){
         $('#btn-solicita-footer').prop("disabled",true);
     });
 
+    /*
     $('#btn-volver-main').click(function (event) {
         $("#entrega").hide();
         $("#solicita").hide();
@@ -422,7 +423,7 @@ $(document).ready(function(){
         $("#btn-solicita-head").hide();   
         $(".btns").show();
     });
-
+    */
 
     //modal ayuda
 
@@ -438,7 +439,7 @@ $(document).ready(function(){
         $("#volver-footer").show();
     });
 
-    /*
+
     $('#volver-footer').click(function (event){
         $("#ayuda-main").show();
         $("#entrega-main").hide();
@@ -446,7 +447,6 @@ $(document).ready(function(){
         $("#volver-footer").hide();
         $("#info-text").hide();
     });
-    */
 
     $('#btn-pers-enc').click(function (event){
         $("#entrega-main").hide();

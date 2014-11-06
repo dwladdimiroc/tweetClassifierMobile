@@ -104,6 +104,10 @@ span{
     padding-right: 15px;
 }
 
+#btn-lang-head{
+    color: #d9534f;
+}
+
 @media(min-width:600px){
     .row-body-tweet{
         margin-right: 1%;
