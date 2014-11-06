@@ -295,7 +295,7 @@ $(document).ready(function(){
             $("#btn-lang-head").hide();
             $("#btn-entrega-head").hide();
             $("#btn-solicita-head").hide();
-      
+            $("#btn-clasificar").hide();
       
             jQuery.support.cors = true;
 
@@ -372,11 +372,11 @@ $(document).ready(function(){
     });
 
     $('#btn-entrega-body').click(function (event) {
+        $("#btn-clasificar").show();
         $("#entrega").show();
         $(".btns").hide();
         $("#btn-entrega-footer").show();
         $("#btn-solicita-footer").show();
-        $("#btn-entrega-head").show();
         $("#btn-lang-head").show();
         $('#btn-entrega-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
@@ -386,7 +386,6 @@ $(document).ready(function(){
         $("#solicita").hide();
         $("#entrega").show();
         $("#btn-solicita-head").hide();
-        $("#btn-entrega-head").show();
         $('#btn-entrega-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
         $('#btn-solicita-footer').prop("disabled",false);
@@ -395,10 +394,10 @@ $(document).ready(function(){
 
     $('#btn-solicita-body').click(function (event) {
         $("#solicita").show();
+        $("#btn-clasificar").show();
         $(".btns").hide();
         $("#btn-solicita-footer").show();
         $("#btn-entrega-footer").show();
-        $("#btn-solicita-head").show();
         $("#btn-lang-head").show();
         $('#btn-solicita-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
@@ -408,7 +407,6 @@ $(document).ready(function(){
         $("#solicita").show();
         $("#entrega").hide();
         $("#btn-entrega-head").hide();
-        $("#btn-solicita-head").show();
         $('#btn-entrega-footer').prop("disabled", false);
         $('#btn-clasificar').prop("disabled", false);
         $('#btn-solicita-footer').prop("disabled",true);
@@ -705,7 +703,8 @@ $(document).ready(function(){
                 $("#btn-solicita-footer").hide();
                 $("#btn-entrega-footer").hide();
                 $("#btn-entrega-head").hide(); 
-                $("#btn-solicita-head").hide();  
+                $("#btn-solicita-head").hide();
+                $("#btn-clasificar").hide();  
                 $(".btns").show();
             }  
         });
