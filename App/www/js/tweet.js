@@ -228,8 +228,8 @@ $(document).ready(function(){
         if(checkTweetEmpty()){
         	event.preventDefault(); 
             var classTweet = {
-                class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0 },
-                class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0 }
+                class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
+                class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 }
             };
 
             //Realizar esto con For Each en la parte del class
@@ -255,6 +255,14 @@ $(document).ready(function(){
                         classTweet.class1.subclass9 = 1;
                     }else if($(div).attr("value") == 10){
                         classTweet.class1.subclass10 = 1;
+                    }else if($(div).attr("value") == 11){
+                        classTweet.class1.subclass11 = 1;
+                    }else if($(div).attr("value") == 12){
+                        classTweet.class1.subclass12 = 1;
+                    }else if($(div).attr("value") == 13){
+                        classTweet.class1.subclass13 = 1;
+                    }else if($(div).attr("value") == 14){
+                        classTweet.class1.subclass14 = 1;
                     }
                 });
             } else {
@@ -280,7 +288,9 @@ $(document).ready(function(){
                     }else if($(div).attr("value") == 10){
                         classTweet.class2.subclass10 = 1;
                     }else if($(div).attr("value") == 11){
-                        classTweet.class2.subclass10 = 1;
+                        classTweet.class2.subclass11 = 1;
+                    }else if($(div).attr("value") == 12){
+                        classTweet.class2.subclass12 = 1;
                     }
                 });
             }

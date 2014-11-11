@@ -95,8 +95,8 @@ app.post('/send', function(req, res){
     db.tweetClassifier.save(
     	{
     		tweet: text,
-    		class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0 },
-    		class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0 }
+    		class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
+    		class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 }
     	}, function(err, saved) {
 		  if( err || !saved ){
 		  	console.log("Tweet don't save");
@@ -134,6 +134,10 @@ app.post('/classifier', function(req, res){
     			"class1.subclass8": class1.subclass8,
     			"class1.subclass9": class1.subclass9,
     			"class1.subclass10": class1.subclass10,
+    			"class1.subclass11": class1.subclass11,
+    			"class1.subclass12": class1.subclass12,
+    			"class1.subclass13": class1.subclass13,
+    			"class1.subclass14": class1.subclass14,
     			"class2.subclass1": class2.subclass1,
     			"class2.subclass2": class2.subclass2,
     			"class2.subclass3": class2.subclass3,
@@ -144,7 +148,8 @@ app.post('/classifier', function(req, res){
     			"class2.subclass8": class2.subclass8,
     			"class2.subclass9": class2.subclass9,
     			"class2.subclass10": class2.subclass10,
-    			"class2.subclass11": class2.subclass11}
+    			"class2.subclass11": class2.subclass11,
+    			"class2.subclass12": class2.subclass12}
     	}, function(err, updated) {
 		  if( err || !updated ){
 		  	console.log("Tweet don't classifier");
