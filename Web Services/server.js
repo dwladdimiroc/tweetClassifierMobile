@@ -129,7 +129,32 @@ app.post('/tweetMobile/classifier', function(req, res){
 	// Submit to the DB
     db.tweetClassifier.update(
     	{tweet: text},
-    	{$inc: {"class1.subclass1": 2}
+    	{$inc: {"class1.subclass1": classification.class1.subclass1,
+    			"class1.subclass2": classification.class1.subclass2,
+    			"class1.subclass3": classification.class1.subclass3,
+    			"class1.subclass4": classification.class1.subclass4,
+    			"class1.subclass5": classification.class1.subclass5,
+    			"class1.subclass6": classification.class1.subclass6,
+    			"class1.subclass7": classification.class1.subclass7,
+    			"class1.subclass8": classification.class1.subclass8,
+    			"class1.subclass9": classification.class1.subclass9,
+    			"class1.subclass10": classification.class1.subclass10,
+    			"class1.subclass11": classification.class1.subclass11,
+    			"class1.subclass12": classification.class1.subclass12,
+    			"class1.subclass13": classification.class1.subclass13,
+    			"class1.subclass14": classification.class1.subclass14,
+    			"class2.subclass1": classification.class2.subclass1,
+    			"class2.subclass2": classification.class2.subclass2,
+    			"class2.subclass3": classification.class2.subclass3,
+    			"class2.subclass4": classification.class2.subclass4,
+    			"class2.subclass5": classification.class2.subclass5,
+    			"class2.subclass6": classification.class2.subclass6,
+    			"class2.subclass7": classification.class2.subclass7,
+    			"class2.subclass8": classification.class2.subclass8,
+    			"class2.subclass9": classification.class2.subclass9,
+    			"class2.subclass10": classification.class2.subclass10,
+    			"class2.subclass11": classification.class2.subclass11,
+    			"class2.subclass12": classification.class2.subclass12}
     	}, function(err, updated) {
     		console.log("Update MongoDB");
 		  if( err || !updated ){

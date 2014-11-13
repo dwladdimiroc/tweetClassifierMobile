@@ -326,7 +326,7 @@ $(document).ready(function(){
 
            $.ajax({
     	        url: "http://158.170.35.87:8080/tweetMobile/classifier/",
-    	        type: "POST",
+    	        type: "POST",                
     	        data: { classification : JSON.stringify(classTweet) ,
     	        		tweet : document.getElementById("tweetText").innerHTML},
     	        success: function(data) {
@@ -355,7 +355,7 @@ $(document).ready(function(){
                     });
                     setTimeout($.unblockUI, 2000);
                     console.log(req.responseText);
-                    //console.log(error);
+                    console.log(error);
                 }
             });
         }
