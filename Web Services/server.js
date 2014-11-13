@@ -17,6 +17,10 @@ app.use("/tweetMobile/fonts/", express.static(__dirname + '/fonts/'));
 app.use("/tweetMobile/img/", express.static(__dirname + '/img/'));
 app.use("/tweetMobile/", express.static(__dirname + '/view/'));
 app.use("/tweetMobile/", express.static(__dirname + '/'));
+
+//Routing Mobile
+app.use("/tweetClassifier/", express.static('/alumnos/dwladdimiro/App/'));
+
 //Use for Post
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -25,8 +29,8 @@ app.use(cors());
 console.log('Web Services Online in Port 8080');
 
 //Routing view
-app.get('/404', function(req, res){
-	res.redirect("/404.html");
+app.get('/tweetMobile/404', function(req, res){
+	res.redirect("/tweetMobile/404.html");
 });
 
 //Devuelve los los ultimos n tweets
@@ -103,13 +107,13 @@ app.post('/send', function(req, res){
 		  	res.redirect("/*");
 		  } else {
 		  	console.log("Tweet save");
-		  	res.redirect("/");
+		  	res.redirect("/tweetMobile/");
 		  }
 	});
 });
 
 //Realiza el post del dato
-app.post('/classifier', function(req, res){
+app.post('/tweetMobile/classifier', function(req, res){
 	console.log('Send Post Classifier');
 	//console.log(req.body.tweet + ' | ' + req.body.classification);
 	//console.log(req.body.classification.class1);
@@ -119,38 +123,15 @@ app.post('/classifier', function(req, res){
 	
 	var text = req.body.tweet;
 	var classification = JSON.parse(req.body.classification);
+	console.log(text);
 	console.log(classification);
 
 	// Submit to the DB
     db.tweetClassifier.update(
     	{tweet: text},
-    	{$inc: {"class1.subclass1": class1.subclass1,
-    			"class1.subclass2": class1.subclass2,
-    			"class1.subclass3": class1.subclass3,
-    			"class1.subclass4": class1.subclass4,
-    			"class1.subclass5": class1.subclass5,
-    			"class1.subclass6": class1.subclass6,
-    			"class1.subclass7": class1.subclass7,
-    			"class1.subclass8": class1.subclass8,
-    			"class1.subclass9": class1.subclass9,
-    			"class1.subclass10": class1.subclass10,
-    			"class1.subclass11": class1.subclass11,
-    			"class1.subclass12": class1.subclass12,
-    			"class1.subclass13": class1.subclass13,
-    			"class1.subclass14": class1.subclass14,
-    			"class2.subclass1": class2.subclass1,
-    			"class2.subclass2": class2.subclass2,
-    			"class2.subclass3": class2.subclass3,
-    			"class2.subclass4": class2.subclass4,
-    			"class2.subclass5": class2.subclass5,
-    			"class2.subclass6": class2.subclass6,
-    			"class2.subclass7": class2.subclass7,
-    			"class2.subclass8": class2.subclass8,
-    			"class2.subclass9": class2.subclass9,
-    			"class2.subclass10": class2.subclass10,
-    			"class2.subclass11": class2.subclass11,
-    			"class2.subclass12": class2.subclass12}
+    	{$inc: {"class1.subclass1": 2}
     	}, function(err, updated) {
+    		console.log("Update MongoDB");
 		  if( err || !updated ){
 		  	console.log("Tweet don't classifier");
 		  	res.send(err);
@@ -162,7 +143,7 @@ app.post('/classifier', function(req, res){
 });
 
 //Realiza el post del dato
-app.post('/language', function(req, res){
+app.post('/tweetMobile/language', function(req, res){
 	console.log('Send Post Error Language');
 	console.log(req.body.tweet);
 	
@@ -202,5 +183,5 @@ app.use(function(err, req, res, next) {
   if(err.status !== 404) {
     return next();
   }
-  res.redirect("/404.html");
+  res.redirect("/tweetMobile/404.html");
 });
