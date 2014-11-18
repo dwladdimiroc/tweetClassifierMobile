@@ -229,7 +229,8 @@ $(document).ready(function(){
         	event.preventDefault(); 
             var classTweet = {
                 class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
-                class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 }
+                class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 },
+                class3: 0
             };
 
             //Realizar esto con For Each en la parte del class
@@ -302,6 +303,7 @@ $(document).ready(function(){
             $('#btn-entrega-footer').prop("disabled", false);
             $('#btn-solicita-footer').prop("disabled", false);
             $('#btn-clasificar').prop("disabled", true);
+            $("#btn-opinion-head").hide();
             $("#btn-lang-head").hide();
             $("#btn-entrega-head").hide();
             $("#btn-solicita-head").hide();
@@ -388,6 +390,7 @@ $(document).ready(function(){
         $("#btn-entrega-footer").show();
         $("#btn-solicita-footer").show();
         $("#btn-lang-head").show();
+        $("#btn-opinion-head").show();
         $('#btn-entrega-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
     });
@@ -409,6 +412,7 @@ $(document).ready(function(){
         $("#btn-solicita-footer").show();
         $("#btn-entrega-footer").show();
         $("#btn-lang-head").show();
+        $("#btn-opinion-head").show();
         $('#btn-solicita-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
     });
@@ -606,6 +610,139 @@ $(document).ready(function(){
 
     //FIN MODAL AYUDA
 
+    $('#btn-opinion-body').click(function (event) {
+        var classTweet = {
+                class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
+                class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 },
+                class3: 1
+            };
+
+        event.preventDefault(); 
+
+        jQuery.support.cors = true;
+
+        $.blockUI({ 
+            css: { 
+                border: 'none', 
+                padding: '15px', 
+                backgroundColor: '#000', 
+                '-webkit-border-radius': '10px', 
+                '-moz-border-radius': '10px', 
+                opacity: .5, 
+                color: '#fff' 
+            },
+            message:
+                "Clasificando..." 
+        });
+
+        $.ajax({
+            url: "http://158.170.35.87:8080/tweetMobile/classifier/",
+            type: "POST",                
+            data: { classification : JSON.stringify(classTweet) ,
+                    tweet : document.getElementById("tweetText").innerHTML},
+            success: function(data) {
+                $.unblockUI();
+                var idTweet = parseInt(document.getElementById("tweetNumber").innerHTML) - 1;
+                var arrayRandom = JSON.parse(window.localStorage.getItem("arrayRandom"));
+                arrayRandom.push(idTweet);
+                window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
+                clearCheckList();
+                initTweet();
+            },
+            error: function(req,error) {
+                $.blockUI({ 
+                    css: { 
+                        border: 'none', 
+                        padding: '15px', 
+                        backgroundColor: '#000', 
+                        '-webkit-border-radius': '10px', 
+                        '-moz-border-radius': '10px', 
+                        opacity: .5, 
+                        color: '#fff' 
+                    },
+                    message:
+                        "Error"
+                    
+                });
+                setTimeout($.unblockUI, 2000);
+                console.log(req.responseText);
+                console.log(error);
+            }
+        });
+    });
+
+    $('#btn-opinion-head').click(function (event) {
+        var classTweet = {
+                class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
+                class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 },
+                class3: 1
+            };
+
+        event.preventDefault(); 
+
+        jQuery.support.cors = true;
+
+        $.blockUI({ 
+            css: { 
+                border: 'none', 
+                padding: '15px', 
+                backgroundColor: '#000', 
+                '-webkit-border-radius': '10px', 
+                '-moz-border-radius': '10px', 
+                opacity: .5, 
+                color: '#fff' 
+            },
+            message:
+                "Clasificando..." 
+        });
+
+        $.ajax({
+            url: "http://158.170.35.87:8080/tweetMobile/classifier/",
+            type: "POST",                
+            data: { classification : JSON.stringify(classTweet) ,
+                    tweet : document.getElementById("tweetText").innerHTML},
+            success: function(data) {
+                $.unblockUI();
+                var idTweet = parseInt(document.getElementById("tweetNumber").innerHTML) - 1;
+                var arrayRandom = JSON.parse(window.localStorage.getItem("arrayRandom"));
+                arrayRandom.push(idTweet);
+                window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
+                clearCheckList();
+                initTweet();
+            },
+            error: function(req,error) {
+                $.blockUI({ 
+                    css: { 
+                        border: 'none', 
+                        padding: '15px', 
+                        backgroundColor: '#000', 
+                        '-webkit-border-radius': '10px', 
+                        '-moz-border-radius': '10px', 
+                        opacity: .5, 
+                        color: '#fff' 
+                    },
+                    message:
+                        "Error"
+                    
+                });
+                setTimeout($.unblockUI, 2000);
+                console.log(req.responseText);
+                console.log(error);
+            }
+        });
+
+        $("#entrega").hide();
+        $("#solicita").hide();
+        $("#btn-opinion-head").hide();
+        $("#btn-lang-head").hide();
+        $("#btn-solicita-footer").hide();
+        $("#btn-entrega-footer").hide();
+        $("#btn-entrega-head").hide(); 
+        $("#btn-solicita-head").hide();
+        $("#btn-clasificar").hide();  
+        $(".btns").show();
+    });
+
     $('#btn-bug-body').click(function (event) {
         bootbox.confirm("¿Está seguro de eliminar este tweet <strong>" + document.getElementById("tweetText").innerHTML + "</strong> ?", function(result) {
             if(result){
@@ -633,6 +770,11 @@ $(document).ready(function(){
                     data: { tweet : document.getElementById("tweetText").innerHTML},
                     success: function(data) {
                         $.unblockUI();
+                        var idTweet = parseInt(document.getElementById("tweetNumber").innerHTML) - 1;
+                        var arrayRandom = JSON.parse(window.localStorage.getItem("arrayRandom"));
+                        arrayRandom.push(idTweet);
+                        window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
+                        clearCheckList();
                         initTweet();
                     },
                     error: function(req,error) { 
@@ -651,7 +793,7 @@ $(document).ready(function(){
                         
                     });
                     setTimeout($.unblockUI, 2000);
-                        console.log(req.responseText);
+                    console.log(req.responseText);
                     }
                 });
             }  
@@ -686,6 +828,11 @@ $(document).ready(function(){
                     data: { tweet : document.getElementById("tweetText").innerHTML},
                     success: function(data) {
                         $.unblockUI();
+                        var idTweet = parseInt(document.getElementById("tweetNumber").innerHTML) - 1;
+                        var arrayRandom = JSON.parse(window.localStorage.getItem("arrayRandom"));
+                        arrayRandom.push(idTweet);
+                        window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
+                        clearCheckList();
                         initTweet();
                     },
                     error: function(req,error) { 
@@ -709,6 +856,7 @@ $(document).ready(function(){
                 });
                 $("#entrega").hide();
                 $("#solicita").hide();
+                $("#btn-opinion-head").hide();
                 $("#btn-lang-head").hide();
                 $("#btn-solicita-footer").hide();
                 $("#btn-entrega-footer").hide();
