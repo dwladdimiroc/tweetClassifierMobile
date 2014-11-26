@@ -101,7 +101,8 @@ app.post('/send', function(req, res){
     		tweet: text,
     		class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
     		class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 },
-    		class3: 0
+    		class3: 0,
+    		class4: 0
     	}, function(err, saved) {
 		  if( err || !saved ){
 		  	console.log("Tweet don't save");
@@ -156,7 +157,8 @@ app.post('/tweetMobile/classifier', function(req, res){
     			"class2.subclass10": classification.class2.subclass10,
     			"class2.subclass11": classification.class2.subclass11,
     			"class2.subclass12": classification.class2.subclass12,
-    			"class3": classification.class3}
+    			"class3": classification.class3,
+    			"class4": classification.class4}
     	}, function(err, updated) {
     		console.log("Update MongoDB");
 		  if( err || !updated ){

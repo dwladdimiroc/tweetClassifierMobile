@@ -230,7 +230,8 @@ $(document).ready(function(){
             var classTweet = {
                 class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
                 class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 },
-                class3: 0
+                class3: 0,
+                class4: 0
             };
 
             //Realizar esto con For Each en la parte del class
@@ -297,17 +298,10 @@ $(document).ready(function(){
             }
 
             $(".btns").show();
-            $('#btn-entrega-footer').hide();
-            $("#btn-solicita-footer").hide();
-            $("#btn-volver-main").hide();
-            $('#btn-entrega-footer').prop("disabled", false);
-            $('#btn-solicita-footer').prop("disabled", false);
-            $('#btn-clasificar').prop("disabled", true);
+            $("#footer").hide();
+            $("#btn-prensa-head").hide();
             $("#btn-opinion-head").hide();
             $("#btn-lang-head").hide();
-            $("#btn-entrega-head").hide();
-            $("#btn-solicita-head").hide();
-            $("#btn-clasificar").hide();
       
             jQuery.support.cors = true;
 
@@ -384,11 +378,13 @@ $(document).ready(function(){
     });
 
     $('#btn-entrega-body').click(function (event) {
+        $("#footer").show();
         $("#btn-clasificar").show();
         $("#entrega").show();
         $(".btns").hide();
         $("#btn-entrega-footer").show();
         $("#btn-solicita-footer").show();
+        $("#btn-prensa-head").show();
         $("#btn-lang-head").show();
         $("#btn-opinion-head").show();
         $('#btn-entrega-footer').prop("disabled", true);
@@ -406,11 +402,13 @@ $(document).ready(function(){
 
 
     $('#btn-solicita-body').click(function (event) {
+        $("#footer").show();
         $("#solicita").show();
         $("#btn-clasificar").show();
         $(".btns").hide();
         $("#btn-solicita-footer").show();
         $("#btn-entrega-footer").show();
+        $("#btn-prensa-head").show();
         $("#btn-lang-head").show();
         $("#btn-opinion-head").show();
         $('#btn-solicita-footer').prop("disabled", true);
@@ -426,18 +424,7 @@ $(document).ready(function(){
         $('#btn-solicita-footer').prop("disabled",true);
     });
 
-    /*
-    $('#btn-volver-main').click(function (event) {
-        $("#entrega").hide();
-        $("#solicita").hide();
-        $("#btn-volver-main").hide();
-        $("#btn-entrega-head").hide(); 
-        $("#btn-solicita-head").hide();   
-        $(".btns").show();
-    });
-    */
-
-    //modal ayuda
+    //Modal de ayuda//
 
     $('#btn-entrega-help').click(function (event){
         $("#ayuda-main").hide();
@@ -610,11 +597,144 @@ $(document).ready(function(){
 
     //FIN MODAL AYUDA
 
+    $('#btn-prensa-body').click(function (event) {
+        var classTweet = {
+                class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
+                class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 },
+                class3: 0,
+                class4: 1
+            };
+
+        event.preventDefault(); 
+
+        jQuery.support.cors = true;
+
+        $.blockUI({ 
+            css: { 
+                border: 'none', 
+                padding: '15px', 
+                backgroundColor: '#000', 
+                '-webkit-border-radius': '10px', 
+                '-moz-border-radius': '10px', 
+                opacity: .5, 
+                color: '#fff' 
+            },
+            message:
+                "Clasificando..." 
+        });
+
+        $.ajax({
+            url: "http://158.170.35.87:8080/tweetMobile/classifier/",
+            type: "POST",                
+            data: { classification : JSON.stringify(classTweet) ,
+                    tweet : document.getElementById("tweetText").innerHTML},
+            success: function(data) {
+                $.unblockUI();
+                var idTweet = parseInt(document.getElementById("tweetNumber").innerHTML) - 1;
+                var arrayRandom = JSON.parse(window.localStorage.getItem("arrayRandom"));
+                arrayRandom.push(idTweet);
+                window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
+                clearCheckList();
+                initTweet();
+            },
+            error: function(req,error) {
+                $.blockUI({ 
+                    css: { 
+                        border: 'none', 
+                        padding: '15px', 
+                        backgroundColor: '#000', 
+                        '-webkit-border-radius': '10px', 
+                        '-moz-border-radius': '10px', 
+                        opacity: .5, 
+                        color: '#fff' 
+                    },
+                    message:
+                        "Error"
+                    
+                });
+                setTimeout($.unblockUI, 2000);
+                console.log(req.responseText);
+                console.log(error);
+            }
+        });
+    });
+
+    $('#btn-prensa-head').click(function (event) {
+        var classTweet = {
+                class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
+                class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 },
+                class3: 0,
+                class4: 1
+            };
+
+        event.preventDefault(); 
+
+        jQuery.support.cors = true;
+
+        $.blockUI({ 
+            css: { 
+                border: 'none', 
+                padding: '15px', 
+                backgroundColor: '#000', 
+                '-webkit-border-radius': '10px', 
+                '-moz-border-radius': '10px', 
+                opacity: .5, 
+                color: '#fff' 
+            },
+            message:
+                "Clasificando..." 
+        });
+
+        $.ajax({
+            url: "http://158.170.35.87:8080/tweetMobile/classifier/",
+            type: "POST",                
+            data: { classification : JSON.stringify(classTweet) ,
+                    tweet : document.getElementById("tweetText").innerHTML},
+            success: function(data) {
+                $.unblockUI();
+                var idTweet = parseInt(document.getElementById("tweetNumber").innerHTML) - 1;
+                var arrayRandom = JSON.parse(window.localStorage.getItem("arrayRandom"));
+                arrayRandom.push(idTweet);
+                window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
+                clearCheckList();
+                initTweet();
+            },
+            error: function(req,error) {
+                $.blockUI({ 
+                    css: { 
+                        border: 'none', 
+                        padding: '15px', 
+                        backgroundColor: '#000', 
+                        '-webkit-border-radius': '10px', 
+                        '-moz-border-radius': '10px', 
+                        opacity: .5, 
+                        color: '#fff' 
+                    },
+                    message:
+                        "Error"
+                    
+                });
+                setTimeout($.unblockUI, 2000);
+                console.log(req.responseText);
+                console.log(error);
+            }
+        });
+
+        $("#entrega").hide();
+        $("#solicita").hide();
+        $("#btn-prensa-head").hide();
+        $("#btn-opinion-head").hide();
+        $("#btn-lang-head").hide();
+        $("#footer").hide();
+        $(".btns").show();
+    });
+
     $('#btn-opinion-body').click(function (event) {
         var classTweet = {
                 class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
                 class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 },
-                class3: 1
+                class3: 1,
+                class4: 0
             };
 
         event.preventDefault(); 
@@ -675,7 +795,8 @@ $(document).ready(function(){
         var classTweet = {
                 class1: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0, subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11 : 0, subclass12 : 0, subclass13 : 0, subclass14 : 0 },
                 class2: {subclass1 : 0, subclass2 : 0, subclass3 : 0, subclass4 : 0,subclass5 : 0, subclass6 : 0, subclass7 : 0, subclass8 : 0, subclass9 : 0, subclass10 : 0, subclass11: 0, subclass12 : 0 },
-                class3: 1
+                class3: 1,
+                class4: 0
             };
 
         event.preventDefault(); 
@@ -733,13 +854,10 @@ $(document).ready(function(){
 
         $("#entrega").hide();
         $("#solicita").hide();
+        $("#btn-prensa-head").hide();
         $("#btn-opinion-head").hide();
         $("#btn-lang-head").hide();
-        $("#btn-solicita-footer").hide();
-        $("#btn-entrega-footer").hide();
-        $("#btn-entrega-head").hide(); 
-        $("#btn-solicita-head").hide();
-        $("#btn-clasificar").hide();  
+        $("#footer").hide();
         $(".btns").show();
     });
 
@@ -854,23 +972,16 @@ $(document).ready(function(){
                         console.log(req.responseText);
                     }
                 });
-                $("#entrega").hide();
-                $("#solicita").hide();
-                $("#btn-opinion-head").hide();
-                $("#btn-lang-head").hide();
-                $("#btn-solicita-footer").hide();
-                $("#btn-entrega-footer").hide();
-                $("#btn-entrega-head").hide(); 
-                $("#btn-solicita-head").hide();
-                $("#btn-clasificar").hide();  
-                $(".btns").show();
+            $("#entrega").hide();
+            $("#solicita").hide();
+            $("#btn-prensa-head").hide();
+            $("#btn-opinion-head").hide();
+            $("#btn-lang-head").hide();
+            $("#footer").hide();
+            $(".btns").show();
             }  
         });
     });
-
-    // $('#btn-help').click(function(event){
-
-    //});
 });
 
 
