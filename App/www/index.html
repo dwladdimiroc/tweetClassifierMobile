@@ -29,6 +29,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/tweet.js"></script>
 
         <title>Tweet Classifier Mobile</title>
     </head>
@@ -40,6 +41,7 @@
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
                 </ol>   
                <!-- Carousel items -->
                 <div class="carousel-inner">
@@ -59,6 +61,58 @@
                           </p>
                         </div>
                     </div>
+                    <div class="item">
+                        <h2 id='title-index'>Ayuda</h2>
+                        <div class="carousel-caption">
+                            <h3 id="subtitle-index">Seleccione una categoria para ver el significado de esta</h3>
+                            <div class="index-help">
+                                <button type="button" class="btn btn-success" id="btn-entrega-index">Entrega <span class="glyphicon glyphicon-bullhorn"></span></button></br></br>
+                                <button type="button" class="btn btn-warning" id="btn-solicita-index">Solicita <span class="glyphicon glyphicon-earphone"></span></button>
+                            </div><br><br><br>
+                        <div class="categorias-entrega-help" style="display:none;">
+                            <div class="btn-group-vertical" role="group" aria-label="...">
+                              <button type="button" class="btn btn-info" id="btn-pers-enc-index">Personas encontradas</button>
+                              <button type="button" class="btn btn-info" id="btn-est-pers-index">Estado personal</button>
+                              <button type="button" class="btn btn-info" id="btn-trans-index">Transporte</button>
+                              <button type="button" class="btn btn-info" id="btn-seg-ciud-index">Seguridad ciudadana</button>
+                              <button type="button" class="btn btn-info" id="btn-lug-index">Lugares</button>
+                              <button type="button" class="btn btn-info" id="btn-insti-index">Instituciones</button>
+                              <button type="button" class="btn btn-info" id="btn-corte-agua-index">Cortes de agua</button>
+                              <button type="button" class="btn btn-info" id="btn-rep-agua-index">Rep. de agua</button>
+                              <button type="button" class="btn btn-info" id="btn-rep-luz-index">Rep. de luz</button>
+                              <button type="button" class="btn btn-info" id="btn-corte-luz-index">Corte de luz</button>
+                              <button type="button" class="btn btn-info" id="btn-rep-teleco-index">Rep. Telecomunicaciones</button>
+                              <button type="button" class="btn btn-info" id="btn-alert-nat-index">Alerta natural</button>
+                              <button type="button" class="btn btn-info" id="btn-otros-entr-index">Otros</button>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div class="categorias-solicita-help" style="display:none;">
+                            <div class="btn-group-vertical" role="group" aria-label="...">
+                              <button type="button" class="btn btn-info" id="btn-pers-perd-index">Personas perdidas</button>
+                              <button type="button" class="btn btn-info" id="btn-trans-sol-index">Transporte</button>
+                              <button type="button" class="btn btn-info" id="btn-ayu-damn-index">Ayuda damnificados</button>
+                              <button type="button" class="btn btn-info" id="btn-volun-index">Voluntarios</button>
+                              <button type="button" class="btn btn-info" id="btn-seg-ciudad-index">Seguridad ciudadana</button>
+                              <button type="button" class="btn btn-info" id="btn-lugares-index">Lugares</button>
+                              <button type="button" class="btn btn-info" id="btn-institu-index">Instituciones</button>
+                              <button type="button" class="btn btn-info" id="btn-agua-index">Agua</button>
+                              <button type="button" class="btn btn-info" id="btn-luz-index">Luz</button>
+                              <button type="button" class="btn btn-info" id="btn-teleco-index">Telecomunicaciones</button>
+                              <button type="button" class="btn btn-info" id="btn-natu-alert-index">Alerta natural</button>
+                              <button type="button" class="btn btn-info" id="btn-otros-soli-index">Otros</button>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" id="volver-index" style="display:none;margin-top:10px;">Volver</button>
+
+                        <div id="info-text-index" style="display:none;position:absolute;top:0;">
+                        </div>
+
+
+                        </div>
+                    </div>                    
                     <div class="item">
                         <h2>Recopilación</h2>
                         <div class="carousel-caption">

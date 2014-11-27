@@ -438,6 +438,36 @@ $(document).ready(function(){
         $("#volver-footer").show();
     });
 
+    $('#btn-entrega-index').click(function (event){
+        $('#title-index').hide();
+        $('#subtitle-index').hide();
+        $('.index-help').hide();
+        $('.categorias-entrega-help').show();
+        $("#volver-index").show();
+        //$('#btn-entrega-index').hide();
+        //$('#btn-solicita-index').hide();
+    });
+
+    $('#btn-solicita-index').click(function (event){
+        $('#title-index').hide();
+        $('#subtitle-index').hide();
+        $('.index-help').hide();
+        $('.categorias-solicita-help').show();
+        $("#volver-index").show();
+        //$('#btn-entrega-index').hide();
+        //$('#btn-solicita-index').hide();
+    });
+
+    $('#volver-index').click(function (event) {
+        $('#volver-index').hide();
+        $('.categorias-entrega-help').hide();
+        $('.categorias-solicita-help').hide();
+        $("#info-text-index").hide();
+        $('#title-index').show();
+        $('#subtitle-index').show();
+        $('.index-help').show();
+    });
+
 
     $('#volver-footer').click(function (event){
         $("#ayuda-main").show();
@@ -454,6 +484,14 @@ $(document).ready(function(){
         $("#info-text").append("Todo tweet que informe el hallazgo de una persona que estuvo desaparecida.");
     });
 
+    $('#btn-pers-enc-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que informe el hallazgo de una persona que estuvo desaparecida.");
+        $("#volver-index-entrega").hide();
+    });
+
 
     $('#btn-est-pers').click(function (event){
         $("#entrega-main").hide();
@@ -461,6 +499,203 @@ $(document).ready(function(){
         $("#info-text").empty();
         $("#info-text").append("Todo tweet en que un individuo informa sobre su propio estado de salud.");
     });
+
+    $('#btn-est-pers-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet en que un individuo informa sobre su propio estado de salud.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-trans-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet en que se entregue información sobre medios de transporte y/o estado de rutas.");
+        $("#volver-index-entrega").hide();
+    });
+
+
+    $('#btn-seg-ciud-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet donde se indique una amenaza de origen no natural que afecte a un grupo o población.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-lug-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet en que se ofrezca información sobre un lugar geográfico específico.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-insti-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que entregue información sobre alguna institución (albergues u otros).");
+        $("#volver-index-entrega").hide();
+    });    
+
+    $('#btn-corte-agua-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que entregue información sobre cortes de agua potable.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-rep-agua-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que entregue información sobre la reposición del agua potable.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-rep-luz-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que entregue información sobre la reposición de luz.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-corte-luz-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que entregue información sobre cortes de luz.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-rep-teleco-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que entregue información sobre la reposición de internet o telefonía.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-alert-nat-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que entregue información respecto a una emergencia producida por causas naturales.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-otros-entr-index').click(function (event){
+        $(".categorias-entrega-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("todo tweet en que se entregue información sobre un evento en curso, no relacionado a las categorías anteriores.");
+        $("#volver-index-entrega").hide();
+    });
+
+    ////
+
+    $('#btn-pers-perd-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet cuyo contenido sea solicitar información respecto de alguien específico o un grupo familiar específico.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-trans-sol-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet en que se manifieste la necesidad de un medio de transporte o necesidad de movilidad.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-ayu-damn-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que manifieste la necesidad de alimentos, ropa o medicamentos para entregarlos a alguien más.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-volun-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que indique la necesidad de contar con personal voluntario.");
+        $("#volver-index-entrega").hide();
+    });    
+
+    $('#btn-seg-ciudad-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet donde se pida información respecto a amenazas a algún grupo o población de origen no natural.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-lugares-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet en que se solicite información sobre un lugar geográfico específico o de un lugar puntual.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-institu-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que solicite información sobre alguna institución.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-agua-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que solicite información sobre el estado del servicio de agua potable.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-luz-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que solicite información sobre el estado del suministro eléctrico.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-teleco-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que solicite información sobre el estado del suministro de internet y telefonía.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-natu-alert-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet que solicite información respecto a una emergencia producida por causas naturales.");
+        $("#volver-index-entrega").hide();
+    });
+
+    $('#btn-otros-soli-index').click(function (event){
+        $(".categorias-solicita-help").hide();
+        $("#info-text-index").show();
+        $("#info-text-index").empty();
+        $("#info-text-index").append("Todo tweet en que se solicite información sobre un evento en curso, no relacionado a las categorías anteriores.");
+        $("#volver-index-entrega").hide();
+    });
+
+    ////    
 
     $('#btn-lugares').click(function (event){
         $("#entrega-main").hide();
