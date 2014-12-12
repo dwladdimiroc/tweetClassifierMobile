@@ -50,9 +50,6 @@ function initTweet() {
     } else {
         document.getElementById("tweetText").innerHTML = 'No hay más tweet que analizar';
         document.getElementById("tweetNumber").innerHTML = '#';
-        $("#btn-classification-entrega").prop("disabled",true);
-        $("#btn-classification-solicita").prop("disabled",true);
-        $("#btn-bug").prop("disabled",true);
     }
 }
 
@@ -122,16 +119,15 @@ function clearCheckList(){
             }
         }
 
-        function clearDisplay() {
-            $("#entrega").hide();
-            $("#solicita").hide();
-            $("#botoncitos").show();
-        }
-
         //Inicializamos
         init();
-        clearDisplay();
     });
+}
+
+function clearDisplay() {
+    $("#entrega").hide();
+    $("#solicita").hide();
+    $("#botoncitos").show();
 }
 
 function checkTweetEmpty(){
@@ -332,6 +328,7 @@ $(document).ready(function(){
                     arrayRandom.push(idTweet);
                     window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
                     clearCheckList();
+                    clearDisplay();
                     initTweet();
                 },
                 error: function(req,error) {
@@ -388,6 +385,7 @@ $(document).ready(function(){
         $("#btn-lang-head").show();
         $("#btn-opinion-head").show();
         $('#btn-entrega-footer').prop("disabled", true);
+        $('#btn-solicita-footer').prop("disabled", false);
         $('#btn-clasificar').prop("disabled", false);
     });
 
@@ -398,6 +396,7 @@ $(document).ready(function(){
         $('#btn-entrega-footer').prop("disabled", true);
         $('#btn-clasificar').prop("disabled", false);
         $('#btn-solicita-footer').prop("disabled",false);
+        clearCheckList();
     });
 
 
@@ -412,6 +411,7 @@ $(document).ready(function(){
         $("#btn-lang-head").show();
         $("#btn-opinion-head").show();
         $('#btn-solicita-footer').prop("disabled", true);
+        $('#btn-entrega-footer').prop("disabled", false)
         $('#btn-clasificar').prop("disabled", false);
     });
 
@@ -422,6 +422,7 @@ $(document).ready(function(){
         $('#btn-entrega-footer').prop("disabled", false);
         $('#btn-clasificar').prop("disabled", false);
         $('#btn-solicita-footer').prop("disabled",true);
+        clearCheckList();
     });
 
     //Modal de ayuda//
@@ -870,6 +871,7 @@ $(document).ready(function(){
                 arrayRandom.push(idTweet);
                 window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
                 clearCheckList();
+                clearDisplay();
                 initTweet();
             },
             error: function(req,error) {
@@ -932,6 +934,7 @@ $(document).ready(function(){
                 arrayRandom.push(idTweet);
                 window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
                 clearCheckList();
+                clearDisplay();
                 initTweet();
             },
             error: function(req,error) {
@@ -1002,6 +1005,7 @@ $(document).ready(function(){
                 arrayRandom.push(idTweet);
                 window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
                 clearCheckList();
+                clearDisplay();
                 initTweet();
             },
             error: function(req,error) {
@@ -1064,6 +1068,7 @@ $(document).ready(function(){
                 arrayRandom.push(idTweet);
                 window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
                 clearCheckList();
+                clearDisplay();
                 initTweet();
             },
             error: function(req,error) {
@@ -1128,6 +1133,7 @@ $(document).ready(function(){
                         arrayRandom.push(idTweet);
                         window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
                         clearCheckList();
+                        clearDisplay();
                         initTweet();
                     },
                     error: function(req,error) { 
@@ -1186,6 +1192,7 @@ $(document).ready(function(){
                         arrayRandom.push(idTweet);
                         window.localStorage.setItem("arrayRandom", JSON.stringify(arrayRandom));
                         clearCheckList();
+                        clearDisplay();
                         initTweet();
                     },
                     error: function(req,error) { 
